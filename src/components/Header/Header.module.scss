@@ -8,93 +8,165 @@
   width: 100%;
 }
 
-.nav {
-  padding: 23px 0;
-  background-color: $bg-color-second;
+header {
+  .nav {
+    padding: 23px 0;
+    background-color: $bg-color-second;
 
-  &Row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
+    &Row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
 
-  &List {
-    display: flex;
-    flex-direction: row;
-    column-gap: 39px;
-
-    &__item {
-      position: relative;
-      padding: 9px 30px;
-
-      font-weight: 700;
-      font-size: 18px;
-
-      background: $text-bg-color-first;
-      border-radius: 17px;
-
-      a {
-        color: $text-color-first;
+      &__link {
+        &Menu {
+          display: none;
+        }
       }
+    }
 
-      ul {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        padding: 19px 20px;
-        margin-top: 14px;
-        right: 0;
-        overflow: hidden;
+    &List {
+      display: flex;
+      flex-direction: row;
+      column-gap: 39px;
 
-        color: $text-color-first;
-        row-gap: 28px;
-
-        background-color: $text-bg-color-first;
-        border-radius: 28px;
-      }
-
-      &Un {
+      &__item {
+        position: relative;
         padding: 9px 30px;
 
         font-weight: 700;
         font-size: 18px;
 
-        background-color: $text-color-first;
+        background: $text-bg-color-first;
         border-radius: 17px;
 
         a {
-          color: $accent-color;
+          color: $text-color-first;
+        }
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          padding: 19px 20px;
+          margin-top: 14px;
+          right: 0;
+          overflow: hidden;
+
+          color: $text-color-first;
+          row-gap: 28px;
+
+          background-color: $text-bg-color-first;
+          border-radius: 28px;
+        }
+
+        &Un {
+          padding: 9px 30px;
+
+          font-weight: 700;
+          font-size: 18px;
+
+          background-color: $text-color-first;
+          border-radius: 17px;
+
+          a {
+            color: $accent-color;
+          }
         }
       }
     }
+
+    &User {
+      display: flex;
+      flex-direction: row;
+      column-gap: 19px;
+      align-items: center;
+
+      a {
+        height: 31px;
+        width: 31px;
+      }
+
+      &__is_auth {
+        display: flex;
+        flex-direction: row;
+        column-gap: 19px;
+
+        a {
+          height: 44px;
+          width: 44px;
+
+          img {
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+          }
+        }
+      }
+
+      svg {
+        cursor: pointer;
+      }
+
+      &__login {
+        width: 96px;
+        height: 38px;
+
+        background-color: $accent-color;
+        border-radius: 17px;
+
+        color: $text-color-first;
+        font-size: 20px;
+        font-weight: 700;
+      }
+    }
   }
+}
 
-  &User {
-    display: flex;
-    flex-direction: row;
-    column-gap: 19px;
+@media (max-width: 1400px) {
+  header {
+    .nav {
+      border-radius: 0 0 15px 15px;
 
-    svg {
-      cursor: pointer;
-    }
+      &Row {
+        flex-direction: row-reverse;
 
-    img {
-      width: 44px;
-      height: 44px;
-      border-radius: 8px;
-    }
+        &__link {
+          display: flex;
+          flex-direction: row;
+          column-gap: 26px;
+          align-items: center;
 
-    &__login {
-      width: 96px;
-      height: 38px;
+          a {
+            width: 39px;
+            height: 27px;
 
-      background-color: $accent-color;
-      border-radius: 17px;
+            img {
+              width: 39px;
+              height: 27px;
+            }
+          }
 
-      color: $text-color-first;
-      font-size: 20px;
-      font-weight: 700;
+          &Menu {
+            display: block;
+            cursor: pointer;
+          }
+        }
+      }
+
+      &List {
+        display: none;
+      }
+
+      &User {
+        &__is_auth {
+          svg {
+            width: 0;
+            height: 0;
+          }
+        }
+      }
     }
   }
 }
