@@ -1,0 +1,100 @@
+@import '../../assets/scss/main.scss';
+
+.fixedNavBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+}
+
+.nav {
+  padding: 23px 0;
+  background-color: $bg-color-second;
+
+  &Row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &List {
+    display: flex;
+    flex-direction: row;
+    column-gap: 39px;
+
+    &__item {
+      position: relative;
+      padding: 9px 30px;
+
+      font-weight: 700;
+      font-size: 18px;
+
+      background: $text-bg-color-first;
+      border-radius: 17px;
+
+      a {
+        color: $text-color-first;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        padding: 19px 20px;
+        margin-top: 14px;
+        right: 0;
+        overflow: hidden;
+
+        color: $text-color-first;
+        row-gap: 28px;
+
+        background-color: $text-bg-color-first;
+        border-radius: 28px;
+      }
+
+      &Un {
+        padding: 9px 30px;
+
+        font-weight: 700;
+        font-size: 18px;
+
+        background-color: $text-color-first;
+        border-radius: 17px;
+
+        a {
+          color: $accent-color;
+        }
+      }
+    }
+  }
+
+  &User {
+    display: flex;
+    flex-direction: row;
+    column-gap: 19px;
+
+    svg {
+      cursor: pointer;
+    }
+
+    img {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+    }
+
+    &__login {
+      width: 96px;
+      height: 38px;
+
+      background-color: $accent-color;
+      border-radius: 17px;
+
+      color: $text-color-first;
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+}
