@@ -11,10 +11,12 @@ export const Header = () => {
   const menuClientRef = React.useRef();
   const menuGuideRef = React.useRef();
   const menuContactsRef = React.useRef();
+  const menuNotificationRef = React.useRef();
 
   const [menuClientOpen, setMenuClientOpen] = React.useState(false);
   const [menuGuideOpen, setMenuGuideOpen] = React.useState(false);
   const [menuContactsOpen, setMenuContactsOpen] = React.useState(false);
+  const [menuNotificationOpen, setMenuNotificationOpen] = React.useState(false);
 
   const [menuNavOpen, setMenuNavOpen] = React.useState(false);
 
@@ -34,15 +36,25 @@ export const Header = () => {
         setMenuContactsOpen(false);
       }
     };
+    const handleClickNotificationOutside = event => {
+      if (!event.composedPath().includes(menuNotificationRef.current)) {
+        setMenuNotificationOpen(false);
+      }
+    };
 
     document.body.addEventListener('click', handleClickClientOutside);
     document.body.addEventListener('click', handleClickGuideOutside);
     document.body.addEventListener('click', handleClickContactsOutside);
+    document.body.addEventListener('click', handleClickNotificationOutside);
 
     return () => {
       document.body.removeEventListener('click', handleClickClientOutside);
       document.body.removeEventListener('click', handleClickGuideOutside);
       document.body.removeEventListener('click', handleClickContactsOutside);
+      document.body.removeEventListener(
+        'click',
+        handleClickNotificationOutside
+      );
     };
   }, []);
 
@@ -101,7 +113,6 @@ export const Header = () => {
                 </div>
               )}
             </div>
-
             <ul className={styles.navList}>
               <li className={styles.navList__itemUn}>
                 <Link to="/" onClick={() => window.scrollTo(0, 0)}>
@@ -157,36 +168,121 @@ export const Header = () => {
                 )}
               </li>
             </ul>
-            <div className={styles.navUser}>
-              <Link to="/">
-                <svg
-                  width="31"
-                  height="31"
-                  viewBox="0 0 31 31"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+            <ul className={styles.navUser}>
+              <li className={styles.navUser__item}>
+                <Link to="/">
+                  <svg
+                    width="31"
+                    height="31"
+                    viewBox="0 0 31 31"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15.5 0C24.0606 0 31 6.93935 31 15.5C31 24.0606 24.0606 31 15.5 31C6.93935 31 0 24.0606 0 15.5C0 6.93935 6.93935 0 15.5 0ZM15.5 21.7C15.0889 21.7 14.6947 21.8633 14.404 22.154C14.1133 22.4447 13.95 22.8389 13.95 23.25C13.95 23.6611 14.1133 24.0553 14.404 24.346C14.6947 24.6367 15.0889 24.8 15.5 24.8C15.9111 24.8 16.3053 24.6367 16.596 24.346C16.8867 24.0553 17.05 23.6611 17.05 23.25C17.05 22.8389 16.8867 22.4447 16.596 22.154C16.3053 21.8633 15.9111 21.7 15.5 21.7ZM15.5 6.975C14.0098 6.975 12.5807 7.56697 11.5269 8.62069C10.4732 9.67441 9.88125 11.1036 9.88125 12.5938C9.88125 13.0048 10.0446 13.3991 10.3352 13.6898C10.6259 13.9804 11.0202 14.1437 11.4312 14.1437C11.8423 14.1437 12.2366 13.9804 12.5273 13.6898C12.8179 13.3991 12.9812 13.0048 12.9812 12.5938C12.9818 12.1366 13.1067 11.6881 13.3427 11.2965C13.5787 10.9049 13.9168 10.585 14.3208 10.3709C14.7248 10.1569 15.1794 10.0568 15.6359 10.0815C16.0924 10.1062 16.5336 10.2546 16.9122 10.511C17.2908 10.7673 17.5924 11.1219 17.7849 11.5366C17.9773 11.9513 18.0531 12.4106 18.0044 12.8652C17.9556 13.3198 17.784 13.7525 17.5081 14.117C17.2321 14.4815 16.8621 14.764 16.4377 14.9342C15.3899 15.3527 13.95 16.4254 13.95 18.2125V18.6C13.95 19.0111 14.1133 19.4053 14.404 19.696C14.6947 19.9867 15.0889 20.15 15.5 20.15C15.9111 20.15 16.3053 19.9867 16.596 19.696C16.8867 19.4053 17.05 19.0111 17.05 18.6C17.05 18.2218 17.1275 18.0327 17.4545 17.8715L17.5894 17.8095C18.7997 17.3226 19.8029 16.4299 20.427 15.2844C21.0512 14.1389 21.2575 12.812 21.0104 11.531C20.7634 10.2501 20.0785 9.09503 19.0731 8.26378C18.0677 7.43253 16.8045 6.9769 15.5 6.975Z"
+                      fill="white"
+                    />
+                  </svg>
+                </Link>
+              </li>
+              <li className={styles.navUser__item} ref={menuNotificationRef}>
+                <Link
+                  to="/"
+                  onClick={() => setMenuNotificationOpen(!menuNotificationOpen)}
                 >
-                  <path
-                    d="M15.5 0C24.0606 0 31 6.93935 31 15.5C31 24.0606 24.0606 31 15.5 31C6.93935 31 0 24.0606 0 15.5C0 6.93935 6.93935 0 15.5 0ZM15.5 21.7C15.0889 21.7 14.6947 21.8633 14.404 22.154C14.1133 22.4447 13.95 22.8389 13.95 23.25C13.95 23.6611 14.1133 24.0553 14.404 24.346C14.6947 24.6367 15.0889 24.8 15.5 24.8C15.9111 24.8 16.3053 24.6367 16.596 24.346C16.8867 24.0553 17.05 23.6611 17.05 23.25C17.05 22.8389 16.8867 22.4447 16.596 22.154C16.3053 21.8633 15.9111 21.7 15.5 21.7ZM15.5 6.975C14.0098 6.975 12.5807 7.56697 11.5269 8.62069C10.4732 9.67441 9.88125 11.1036 9.88125 12.5938C9.88125 13.0048 10.0446 13.3991 10.3352 13.6898C10.6259 13.9804 11.0202 14.1437 11.4312 14.1437C11.8423 14.1437 12.2366 13.9804 12.5273 13.6898C12.8179 13.3991 12.9812 13.0048 12.9812 12.5938C12.9818 12.1366 13.1067 11.6881 13.3427 11.2965C13.5787 10.9049 13.9168 10.585 14.3208 10.3709C14.7248 10.1569 15.1794 10.0568 15.6359 10.0815C16.0924 10.1062 16.5336 10.2546 16.9122 10.511C17.2908 10.7673 17.5924 11.1219 17.7849 11.5366C17.9773 11.9513 18.0531 12.4106 18.0044 12.8652C17.9556 13.3198 17.784 13.7525 17.5081 14.117C17.2321 14.4815 16.8621 14.764 16.4377 14.9342C15.3899 15.3527 13.95 16.4254 13.95 18.2125V18.6C13.95 19.0111 14.1133 19.4053 14.404 19.696C14.6947 19.9867 15.0889 20.15 15.5 20.15C15.9111 20.15 16.3053 19.9867 16.596 19.696C16.8867 19.4053 17.05 19.0111 17.05 18.6C17.05 18.2218 17.1275 18.0327 17.4545 17.8715L17.5894 17.8095C18.7997 17.3226 19.8029 16.4299 20.427 15.2844C21.0512 14.1389 21.2575 12.812 21.0104 11.531C20.7634 10.2501 20.0785 9.09503 19.0731 8.26378C18.0677 7.43253 16.8045 6.9769 15.5 6.975Z"
-                    fill="white"
-                  />
-                </svg>
-              </Link>
-
-              <Link to="/">
-                <svg
-                  width="27"
-                  height="32"
-                  viewBox="0 0 27 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M26.617 25.1383V26.617H0V25.1383L2.95745 22.1809V13.3085C2.95745 8.72447 5.95926 4.68755 10.3511 3.38628V2.95745C10.3511 2.17308 10.6627 1.42084 11.2173 0.866216C11.7719 0.311587 12.5241 0 13.3085 0C14.0929 0 14.8451 0.311587 15.3997 0.866216C15.9544 1.42084 16.266 2.17308 16.266 2.95745V3.38628C20.6578 4.68755 23.6596 8.72447 23.6596 13.3085V22.1809L26.617 25.1383ZM16.266 28.0957C16.266 28.8801 15.9544 29.6323 15.3997 30.187C14.8451 30.7416 14.0929 31.0532 13.3085 31.0532C12.5241 31.0532 11.7719 30.7416 11.2173 30.187C10.6627 29.6323 10.3511 28.8801 10.3511 28.0957"
-                    fill="white"
-                  />
-                </svg>
-              </Link>
+                  <svg
+                    width="27"
+                    height="32"
+                    viewBox="0 0 27 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M26.617 25.1383V26.617H0V25.1383L2.95745 22.1809V13.3085C2.95745 8.72447 5.95926 4.68755 10.3511 3.38628V2.95745C10.3511 2.17308 10.6627 1.42084 11.2173 0.866216C11.7719 0.311587 12.5241 0 13.3085 0C14.0929 0 14.8451 0.311587 15.3997 0.866216C15.9544 1.42084 16.266 2.17308 16.266 2.95745V3.38628C20.6578 4.68755 23.6596 8.72447 23.6596 13.3085V22.1809L26.617 25.1383ZM16.266 28.0957C16.266 28.8801 15.9544 29.6323 15.3997 30.187C14.8451 30.7416 14.0929 31.0532 13.3085 31.0532C12.5241 31.0532 11.7719 30.7416 11.2173 30.187C10.6627 29.6323 10.3511 28.8801 10.3511 28.0957"
+                      fill="white"
+                    />
+                  </svg>
+                </Link>
+                {menuNotificationOpen && (
+                  <ul className={styles.navUser__itemList}>
+                    <li className={styles.navUser__itemListNote}>
+                      <div className={styles.navUser__itemListNote__left}>
+                        <div
+                          className={styles.navUser__itemListNote__leftChecked}
+                        >
+                          <svg
+                            width="15"
+                            height="15"
+                            viewBox="0 0 15 15"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle cx="7.5" cy="7.5" r="7.5" fill="#3578FF" />
+                          </svg>
+                          <p>Непрочитанное</p>
+                        </div>
+                        <div className={styles.navUser__itemListNote__leftText}>
+                          Здравствуйте, хотите зарегистрироваться?
+                        </div>
+                      </div>
+                      <div className={styles.navUser__itemListNote__right}>
+                        <p>Сегодня</p>
+                        <p>8:00</p>
+                      </div>
+                    </li>
+                    <li className={styles.navUser__itemListNote}>
+                      <div className={styles.navUser__itemListNote__left}>
+                        <div
+                          className={styles.navUser__itemListNote__leftChecked}
+                        >
+                          <svg
+                            width="15"
+                            height="15"
+                            viewBox="0 0 15 15"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle cx="7.5" cy="7.5" r="7.5" fill="#3578FF" />
+                          </svg>
+                          <p>Непрочитанное</p>
+                        </div>
+                        <div className={styles.navUser__itemListNote__leftText}>
+                          Здравствуйте, хотите зарегистрироваться?
+                        </div>
+                      </div>
+                      <div className={styles.navUser__itemListNote__right}>
+                        <p>Сегодня</p>
+                        <p>8:00</p>
+                      </div>
+                    </li>
+                    <li className={styles.navUser__itemListNote}>
+                      <div className={styles.navUser__itemListNote__left}>
+                        <div
+                          className={styles.navUser__itemListNote__leftChecked}
+                        >
+                          <svg
+                            width="15"
+                            height="15"
+                            viewBox="0 0 15 15"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle cx="7.5" cy="7.5" r="7.5" fill="#3578FF" />
+                          </svg>
+                          <p>Непрочитанное</p>
+                        </div>
+                        <div className={styles.navUser__itemListNote__leftText}>
+                          Здравствуйте, хотите зарегистрироваться?
+                        </div>
+                      </div>
+                      <div className={styles.navUser__itemListNote__right}>
+                        <p>Сегодня</p>
+                        <p>8:00</p>
+                      </div>
+                    </li>
+                  </ul>
+                )}
+              </li>
 
               {isAuth ? (
                 <div className={styles.navUser__is_auth}>
@@ -213,7 +309,7 @@ export const Header = () => {
               ) : (
                 <button className={styles.navUser__login}>Вход</button>
               )}
-            </div>
+            </ul>
           </div>
         </div>
       </nav>

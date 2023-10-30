@@ -83,6 +83,68 @@ header {
       column-gap: 19px;
       align-items: center;
 
+      &__item {
+        position: relative;
+
+        &List {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          padding: 19px 20px;
+          margin-top: 14px;
+          right: 0;
+          overflow: hidden;
+
+          color: $text-color-first;
+          row-gap: 39px;
+
+          background-color: $text-bg-color-first;
+          border-radius: 28px;
+
+          &Note {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            column-gap: 10px;
+
+            &__left {
+              display: flex;
+              flex-direction: column;
+              row-gap: 8px;
+
+              &Checked {
+                display: flex;
+                flex-direction: row;
+                column-gap: 13px;
+
+                p {
+                  font-weight: 700;
+                  font-size: 18px;
+                  color: $text-color-second;
+                }
+              }
+
+              &Text {
+                min-width: 240px;
+                font-size: 16px;
+              }
+            }
+
+            &__right {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+
+              p {
+                right: 0;
+                color: $text-color-second;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+
       a {
         height: 31px;
         width: 31px;
