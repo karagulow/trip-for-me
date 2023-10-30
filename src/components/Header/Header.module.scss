@@ -136,9 +136,9 @@ header {
               justify-content: space-between;
 
               p {
-                right: 0;
                 color: $text-color-second;
                 font-size: 14px;
+                text-align: right;
               }
             }
           }
@@ -222,10 +222,17 @@ header {
       }
 
       &User {
+        flex-direction: row-reverse;
+
+        &__item {
+          &List {
+            right: auto;
+            left: 0;
+          }
+        }
         &__is_auth {
           svg {
-            width: 0;
-            height: 0;
+            display: none;
           }
         }
       }
