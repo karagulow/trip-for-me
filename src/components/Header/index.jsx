@@ -4,9 +4,15 @@ import { Link } from 'react-router-dom';
 import styles from './Header.module.scss';
 import logo from '../../assets/img/main/logo.svg';
 import avatar from '../../assets/img/main/avatar.png';
+import { Notification } from '../Notification';
 
 export const Header = () => {
   const [isAuth, setIsAuth] = React.useState(false); // ВРМЕННО! ПЕРЕНЕСТИ В REDUX!
+
+  const scrollToFooter = () => {
+    const footerElement = document.getElementById('footer');
+    footerElement.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const menuClientRef = React.useRef();
   const menuGuideRef = React.useRef();
@@ -79,9 +85,9 @@ export const Header = () => {
                   }}
                 >
                   <svg
-                    width="19"
+                    width="21"
                     height="21"
-                    viewBox="0 0 19 21"
+                    viewBox="0 0 21 21"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -100,8 +106,8 @@ export const Header = () => {
                 >
                   <svg
                     width="21"
-                    height="19"
-                    viewBox="0 0 21 19"
+                    height="21"
+                    viewBox="0 0 21 21"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -162,7 +168,7 @@ export const Header = () => {
                       <Link to="/about-us">О нас</Link>
                     </li>
                     <li>
-                      <Link to="/">Поддержка</Link>
+                      <div onClick={scrollToFooter}>Поддержка</div>
                     </li>
                   </ul>
                 )}
@@ -186,14 +192,13 @@ export const Header = () => {
                 </Link>
               </li>
               <li className={styles.navUser__item} ref={menuNotificationRef}>
-                <Link
-                  to="/"
+                <div
                   onClick={() => setMenuNotificationOpen(!menuNotificationOpen)}
                 >
                   <svg
                     width="27"
-                    height="32"
-                    viewBox="0 0 27 32"
+                    height="31"
+                    viewBox="0 0 27 31"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -202,84 +207,12 @@ export const Header = () => {
                       fill="white"
                     />
                   </svg>
-                </Link>
+                </div>
                 {menuNotificationOpen && (
                   <ul className={styles.navUser__itemList}>
-                    <li className={styles.navUser__itemListNote}>
-                      <div className={styles.navUser__itemListNote__left}>
-                        <div
-                          className={styles.navUser__itemListNote__leftChecked}
-                        >
-                          <svg
-                            width="15"
-                            height="15"
-                            viewBox="0 0 15 15"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <circle cx="7.5" cy="7.5" r="7.5" fill="#3578FF" />
-                          </svg>
-                          <p>Непрочитанное</p>
-                        </div>
-                        <div className={styles.navUser__itemListNote__leftText}>
-                          Здравствуйте, хотите зарегистрироваться?
-                        </div>
-                      </div>
-                      <div className={styles.navUser__itemListNote__right}>
-                        <p>Сегодня</p>
-                        <p>8:00</p>
-                      </div>
-                    </li>
-                    <li className={styles.navUser__itemListNote}>
-                      <div className={styles.navUser__itemListNote__left}>
-                        <div
-                          className={styles.navUser__itemListNote__leftChecked}
-                        >
-                          <svg
-                            width="15"
-                            height="15"
-                            viewBox="0 0 15 15"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <circle cx="7.5" cy="7.5" r="7.5" fill="#3578FF" />
-                          </svg>
-                          <p>Непрочитанное</p>
-                        </div>
-                        <div className={styles.navUser__itemListNote__leftText}>
-                          Здравствуйте, хотите зарегистрироваться?
-                        </div>
-                      </div>
-                      <div className={styles.navUser__itemListNote__right}>
-                        <p>Сегодня</p>
-                        <p>8:00</p>
-                      </div>
-                    </li>
-                    <li className={styles.navUser__itemListNote}>
-                      <div className={styles.navUser__itemListNote__left}>
-                        <div
-                          className={styles.navUser__itemListNote__leftChecked}
-                        >
-                          <svg
-                            width="15"
-                            height="15"
-                            viewBox="0 0 15 15"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <circle cx="7.5" cy="7.5" r="7.5" fill="#3578FF" />
-                          </svg>
-                          <p>Непрочитанное</p>
-                        </div>
-                        <div className={styles.navUser__itemListNote__leftText}>
-                          Здравствуйте, хотите зарегистрироваться?
-                        </div>
-                      </div>
-                      <div className={styles.navUser__itemListNote__right}>
-                        <p>Сегодня</p>
-                        <p>8:00</p>
-                      </div>
-                    </li>
+                    <Notification />
+                    <Notification />
+                    <Notification />
                   </ul>
                 )}
               </li>

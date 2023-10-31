@@ -42,6 +42,7 @@ header {
         border-radius: 17px;
 
         color: $text-color-first;
+        cursor: pointer;
 
         ul {
           display: flex;
@@ -72,6 +73,7 @@ header {
           border-radius: 17px;
 
           color: $accent-color;
+          cursor: pointer;
         }
       }
     }
@@ -223,10 +225,20 @@ header {
       &User {
         flex-direction: row-reverse;
 
+        &__login {
+          width: 88px;
+          height: 35px;
+        }
+
         &__item {
           &List {
             right: auto;
             left: -115px;
+          }
+
+          svg {
+            width: 25px;
+            height: 25px;
           }
         }
         &__is_auth {

@@ -6,7 +6,7 @@ import fundLogo from '../../assets/img/main/fund.png';
 
 export const Footer = () => {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} id="footer">
       <div className="container">
         <div className={styles.footerWrapper}>
           <img src={logo} alt="logo" />
