@@ -41,9 +41,7 @@ header {
         background: $text-bg-color-first;
         border-radius: 17px;
 
-        a {
-          color: $text-color-first;
-        }
+        color: $text-color-first;
 
         ul {
           display: flex;
@@ -54,11 +52,14 @@ header {
           right: 0;
           overflow: hidden;
 
-          color: $text-color-first;
           row-gap: 28px;
 
           background-color: $text-bg-color-first;
           border-radius: 28px;
+
+          a {
+            color: $text-color-first;
+          }
         }
 
         &Un {
@@ -70,9 +71,7 @@ header {
           background-color: $text-color-first;
           border-radius: 17px;
 
-          a {
-            color: $accent-color;
-          }
+          color: $accent-color;
         }
       }
     }
@@ -227,7 +226,7 @@ header {
         &__item {
           &List {
             right: auto;
-            left: 0;
+            left: -115px;
           }
         }
         &__is_auth {

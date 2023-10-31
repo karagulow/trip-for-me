@@ -115,14 +115,14 @@ export const Header = () => {
             </div>
             <ul className={styles.navList}>
               <li className={styles.navList__itemUn}>
-                <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+                <div onClick={() => window.scrollTo(0, 0)}>
                   Как это работает?
-                </Link>
+                </div>
               </li>
               <li className={styles.navList__item} ref={menuClientRef}>
-                <Link to="/" onClick={() => setMenuClientOpen(!menuClientOpen)}>
+                <div to="/" onClick={() => setMenuClientOpen(!menuClientOpen)}>
                   Путешествия
-                </Link>
+                </div>
                 {menuClientOpen && (
                   <ul>
                     <li>
@@ -135,9 +135,9 @@ export const Header = () => {
                 )}
               </li>
               <li className={styles.navList__item} ref={menuGuideRef}>
-                <Link to="/" onClick={() => setMenuGuideOpen(!menuGuideOpen)}>
+                <div to="/" onClick={() => setMenuGuideOpen(!menuGuideOpen)}>
                   Организаторам туров
-                </Link>
+                </div>
                 {menuGuideOpen && (
                   <ul>
                     <li>
@@ -150,16 +150,16 @@ export const Header = () => {
                 )}
               </li>
               <li className={styles.navList__item} ref={menuContactsRef}>
-                <Link
+                <div
                   to="/"
                   onClick={() => setMenuContactsOpen(!menuContactsOpen)}
                 >
                   Контакты
-                </Link>
+                </div>
                 {menuContactsOpen && (
                   <ul>
                     <li>
-                      <Link to="/">О нас</Link>
+                      <Link to="/about-us">О нас</Link>
                     </li>
                     <li>
                       <Link to="/">Поддержка</Link>
@@ -313,22 +313,6 @@ export const Header = () => {
           </div>
         </div>
       </nav>
-      <p>sdfsdf</p>
-      <p>sdfsdf</p>
-      <p>sdfsdf</p>
-      <p>sdfsdf</p>
-      <p>sdfsdf</p>
-      <p>sdfsdf</p>
-      <p>sdfsdf</p>
-      <p>sdfsdf</p>
-      <p>sdfsdf</p>
-      <p>sdfsdf</p>
-      <p>sdfsdf</p>
-      <p>sdfsdf</p>
-      <p>sdfsdf</p>
-      <p>sdfsdf</p>
-      <p>sdfsdf</p>
-      <p>sdfsdfv</p>
     </header>
   );
 };

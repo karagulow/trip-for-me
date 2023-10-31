@@ -8,9 +8,11 @@ export const MainLayout = () => {
   return (
     <>
       <Header />
-      <div className="container">
-        <Outlet />
-      </div>
+      <main className="main">
+        <div className="container">
+          <Outlet />
+        </div>
+      </main>
       <Footer />
     </>
   );

@@ -18,11 +18,19 @@ body {
 }
 
 .main {
-  margin-top: 205px;
+  margin-top: 180px;
+  margin-bottom: 200px;
 }
 
 .container {
   margin: 0 auto;
   max-width: 1480px;
   padding: 0 20px;
+}
+
+@media (max-width: 1400px) {
+  .main {
+    margin-top: 130px;
+    margin-bottom: 100px;
+  }
 }
