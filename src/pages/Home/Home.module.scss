@@ -1,1 +1,181 @@
 @import '../../assets/scss/main.scss';
+
+.tour_search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 238px;
+
+  &Title {
+    font-weight: 900;
+    font-size: 56px;
+    color: $text-color-first;
+    margin-bottom: 66px;
+  }
+
+  &Text {
+    font-weight: 500;
+    font-size: 28px;
+    max-width: 1042px;
+    color: $text-color-first;
+    margin-bottom: 105px;
+    text-align: center;
+  }
+
+  &Form {
+    display: flex;
+    font-display: row;
+    column-gap: 31px;
+
+    input {
+      width: 293px;
+      height: 69px;
+      border: 5px solid $accent-color;
+      border-radius: 28px;
+      font-size: 27px;
+      padding: 18px 27px;
+      color: $text-color-first;
+    }
+
+    &Tourists {
+      cursor: pointer;
+      position: relative;
+
+      &__selector {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
+
+        margin-top: 10px;
+        padding: 26px 13px 32px;
+
+        width: 293px;
+        background-color: $text-bg-color-first;
+        border-radius: 28px;
+
+        &__item {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          column-gap: 13px;
+          align-items: center;
+
+          font-size: 18px;
+          font-weight: 500;
+          color: $text-color-first;
+
+          &Value {
+            display: grid;
+            background-color: $text-bg-color-second;
+            border-radius: 28px;
+            height: 35px;
+            width: 100%;
+            text-align: center;
+            align-items: center;
+          }
+        }
+
+        &Add {
+          background-color: $text-bg-color-second;
+          border-radius: 28px;
+          height: 35px;
+          width: 100%;
+          text-align: center;
+
+          font-size: 18px;
+          font-weight: 500;
+          color: $text-color-first;
+        }
+
+        &Btn {
+          background-color: $accent-color;
+          // width: 166px;
+          height: 35px;
+          border-radius: 28px;
+
+          font-weight: 700;
+          font-size: 18px;
+          color: $text-color-first;
+        }
+      }
+    }
+
+    &Btn {
+      background-color: $accent-color;
+      width: 175px;
+      height: 70px;
+      border-radius: 28px;
+
+      font-weight: 700;
+      font-size: 36px;
+      color: $text-color-first;
+    }
+  }
+}
+
+.stories {
+  margin-bottom: 239px;
+
+  &Title {
+    font-weight: 900;
+    font-size: 46px;
+    color: $text-color-first;
+    margin-bottom: 105px;
+  }
+
+  &List {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 40px;
+    row-gap: 40px;
+  }
+}
+
+.selection {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 224px;
+
+  &Title {
+    font-weight: 900;
+    font-size: 46px;
+    color: $text-color-first;
+    margin-bottom: 115px;
+  }
+
+  &Btn {
+    width: 303px;
+    height: 69px;
+    background-color: $accent-color;
+    border-radius: 28px;
+    margin: 0 auto;
+
+    font-weight: 700;
+    font-size: 36px;
+
+    a {
+      color: $text-color-first;
+    }
+  }
+}
+
+.tour {
+  &Title {
+    font-weight: 900;
+    font-size: 46px;
+    color: $text-color-first;
+    margin-bottom: 155px;
+  }
+
+  &List {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 50px;
+    row-gap: 88px;
+  }
+}

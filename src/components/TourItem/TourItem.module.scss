@@ -1,0 +1,70 @@
+@import '../../assets/scss/main.scss';
+
+.tour {
+  &Item {
+    position: relative;
+
+    img {
+      border-radius: 28px;
+    }
+
+    &Text {
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.4);
+      bottom: 21px;
+      padding: 30px 17px 20px;
+
+      &__title {
+        font-size: 38px;
+        font-weight: 700;
+        color: $text-color-first;
+        margin-bottom: 22px;
+      }
+
+      &__description {
+        font-size: 20px;
+        font-weight: 500;
+        color: $text-color-first;
+        margin-bottom: 16px;
+      }
+
+      &__add {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &Left {
+          display: flex;
+          flex-direction: column;
+
+          &__mark {
+            margin-bottom: 10px;
+          }
+
+          &__reviews {
+            font-size: 16px;
+            font-weight: 500;
+            color: $text-color-first;
+          }
+        }
+
+        &Right {
+          display: flex;
+          flex-direction: column;
+
+          &__price {
+            font-size: 38px;
+            font-weight: 700;
+            color: $text-color-first;
+          }
+
+          &__man {
+            font-size: 16px;
+            font-weight: 500;
+            color: $text-color-first;
+          }
+        }
+      }
+    }
+  }
+}

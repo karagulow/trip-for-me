@@ -1,0 +1,30 @@
+@import '../../assets/scss/main.scss';
+
+.stories {
+  &List {
+    &__item {
+      position: relative;
+
+      display: flex;
+      justify-content: center;
+
+      img {
+        border: 5px solid $accent-color;
+        border-radius: 34px;
+        padding: 2px;
+      }
+
+      p {
+        position: absolute;
+        bottom: 34px;
+        width: calc(100% - 14px);
+        padding: 17px 8px;
+        background-color: rgba(53, 120, 255, 0.7);
+
+        font-weight: 700;
+        font-size: 24px;
+        color: $text-color-first;
+      }
+    }
+  }
+}
