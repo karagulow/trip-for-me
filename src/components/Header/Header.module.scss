@@ -8,6 +8,13 @@
   width: 100%;
 }
 
+.circle {
+  background-color: $accent-color;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
 header {
   .nav {
     padding: 23px 0;
@@ -24,6 +31,10 @@ header {
           display: none;
         }
       }
+    }
+
+    &MobList {
+      display: none;
     }
 
     &List {
@@ -204,6 +215,7 @@ header {
           a {
             width: 39px;
             height: 27px;
+            z-index: 9;
 
             img {
               width: 39px;
@@ -214,6 +226,7 @@ header {
           &Menu {
             display: block;
             cursor: pointer;
+            z-index: 9;
           }
         }
       }
@@ -222,8 +235,70 @@ header {
         display: none;
       }
 
+      &MobList {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+
+        background-color: $bg-color-second;
+        border-radius: 0 0 15px 15px;
+        padding: 90px 0;
+
+        &__item {
+          color: $text-color-first;
+          padding: 20px 20px;
+
+          font-weight: 700;
+          font-size: 18px;
+          color: $text-color-first;
+
+          border-top: 1px solid $accent-color;
+
+          &Title {
+            padding-bottom: 22px;
+          }
+
+          ul {
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+
+            font-weight: 400;
+            font-size: 16px;
+
+            li {
+              display: flex;
+              flex-direction: row;
+              column-gap: 10px;
+              color: $text-color-first;
+              align-items: center;
+
+              a {
+                width: 100%;
+                color: $text-color-first;
+              }
+            }
+          }
+
+          &Un {
+            padding-bottom: 20px;
+
+            a {
+              padding: 0 20px;
+              font-weight: 700;
+              font-size: 18px;
+              color: $text-color-first;
+            }
+          }
+        }
+      }
+
       &User {
         flex-direction: row-reverse;
+        z-index: 9;
 
         &__login {
           width: 88px;
@@ -231,14 +306,27 @@ header {
         }
 
         &__item {
-          &List {
-            right: auto;
-            left: -115px;
-          }
-
           svg {
             width: 25px;
             height: 25px;
+          }
+
+          &List {
+            right: auto;
+            left: -115px;
+
+            &Note {
+              &__left {
+                &Checked {
+                  align-items: center;
+
+                  svg {
+                    width: 15px;
+                    height: 15px;
+                  }
+                }
+              }
+            }
           }
         }
         &__is_auth {
