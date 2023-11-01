@@ -242,20 +242,35 @@ header {
         left: 0;
         right: 0;
         z-index: 1;
+        height: 720px;
 
         background-color: $bg-color-second;
         border-radius: 0 0 15px 15px;
-        padding: 90px 0;
+        padding: 90px 0 0;
 
         &__item {
           color: $text-color-first;
-          padding: 20px 20px;
+          padding: 20px;
 
           font-weight: 700;
           font-size: 18px;
           color: $text-color-first;
 
           border-top: 1px solid $accent-color;
+
+          a {
+            display: -webkit-box;
+            color: $text-color-first;
+
+            p {
+              margin-right: 15px;
+            }
+
+            svg {
+              width: 12px;
+              height: 14px;
+            }
+          }
 
           &Title {
             padding-bottom: 22px;

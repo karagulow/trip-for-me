@@ -7,7 +7,7 @@ import avatar from '../../assets/img/main/avatar.png';
 import { Notification } from '../Notification';
 
 export const Header = () => {
-  const [isAuth, setIsAuth] = React.useState(false); // ВРМЕННО! ПЕРЕНЕСТИ В REDUX!
+  const [isAuth, setIsAuth] = React.useState(true); // ВРМЕННО! ПЕРЕНЕСТИ В REDUX!
 
   const scrollToFooter = () => {
     const footerElement = document.getElementById('footer');
@@ -26,6 +26,15 @@ export const Header = () => {
   const [menuNotificationOpen, setMenuNotificationOpen] = React.useState(false);
 
   const [menuNavOpen, setMenuNavOpen] = React.useState(false);
+  const openMobileMenu = () => {
+    setMenuNavOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeMobileMenu = () => {
+    setMenuNavOpen(false);
+    document.body.style.overflow = 'auto';
+  };
 
   React.useEffect(() => {
     const handleClickClientOutside = event => {
@@ -65,8 +74,6 @@ export const Header = () => {
     };
   }, []);
 
-  console.log(menuNavOpen);
-
   return (
     <header>
       <nav className={`${styles.nav} ${styles.fixedNavBar}`}>
@@ -86,6 +93,7 @@ export const Header = () => {
                     className={styles.navRow__linkMenu}
                     onClick={() => {
                       setMenuNavOpen(false);
+                      closeMobileMenu();
                     }}
                   >
                     <svg
@@ -198,9 +206,30 @@ export const Header = () => {
                         </li>
                       </ul>
                     </li>
-                    <li>
-                      <hr />
-                    </li>
+                    {isAuth ? (
+                      <li className={styles.navMobList__item}>
+                        <Link to="#">
+                          <p>Выйти</p>
+                          <svg
+                            width="22"
+                            height="25"
+                            viewBox="0 0 22 25"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M14.7857 2H1.75V20.25C1.75 20.9415 2.02468 21.6046 2.51361 22.0935C3.00255 22.5825 3.66569 22.8571 4.35714 22.8571H14.7857M16.0893 16.3393L20 12.4286M20 12.4286L16.0893 8.51786M20 12.4286H6.96429"
+                              stroke="#3578FF"
+                              stroke-width="2.60714"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </Link>
+                      </li>
+                    ) : (
+                      <></>
+                    )}
                   </ul>
                 </>
               ) : (
@@ -208,6 +237,7 @@ export const Header = () => {
                   className={styles.navRow__linkMenu}
                   onClick={() => {
                     setMenuNavOpen(true);
+                    openMobileMenu();
                   }}
                 >
                   <svg
