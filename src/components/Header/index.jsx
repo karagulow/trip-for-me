@@ -82,7 +82,10 @@ export const Header = () => {
             <div className={styles.navRow__link}>
               <Link
                 to="/"
-                onClick={() => window.scrollTo(0, 0)}
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                  closeMobileMenu();
+                }}
                 className={styles.navLogo}
               >
                 <img src={logo} alt="logo" />
@@ -114,7 +117,7 @@ export const Header = () => {
                       <Link
                         to=""
                         onClick={() => {
-                          setMenuNavOpen(false);
+                          closeMobileMenu();
                           window.scrollTo(0, 0);
                         }}
                       >
@@ -129,9 +132,9 @@ export const Header = () => {
                         <li>
                           <div className={styles.circle}></div>
                           <Link
-                            to="/"
+                            to="tours"
                             onClick={() => {
-                              setMenuNavOpen(false);
+                              closeMobileMenu();
                               window.scrollTo(0, 0);
                             }}
                           >
@@ -143,7 +146,7 @@ export const Header = () => {
                           <Link
                             to="/"
                             onClick={() => {
-                              setMenuNavOpen(false);
+                              closeMobileMenu();
                               window.scrollTo(0, 0);
                             }}
                           >
@@ -162,7 +165,7 @@ export const Header = () => {
                           <Link
                             to="/"
                             onClick={() => {
-                              setMenuNavOpen(false);
+                              closeMobileMenu();
                               window.scrollTo(0, 0);
                             }}
                           >
@@ -174,7 +177,7 @@ export const Header = () => {
                           <Link
                             to="/"
                             onClick={() => {
-                              setMenuNavOpen(false);
+                              closeMobileMenu();
                               window.scrollTo(0, 0);
                             }}
                           >
@@ -193,7 +196,7 @@ export const Header = () => {
                           <Link
                             to="/about-us"
                             onClick={() => {
-                              setMenuNavOpen(false);
+                              closeMobileMenu();
                               window.scrollTo(0, 0);
                             }}
                           >
@@ -268,10 +271,26 @@ export const Header = () => {
                 {menuClientOpen && (
                   <ul>
                     <li>
-                      <Link to="/">Все туры</Link>
+                      <Link
+                        to="tours"
+                        onClick={() => {
+                          window.scrollTo(0, 0);
+                          setMenuClientOpen(false);
+                        }}
+                      >
+                        Все туры
+                      </Link>
                     </li>
                     <li>
-                      <Link to="/">Чат с гидом</Link>
+                      <Link
+                        to="/"
+                        onClick={() => {
+                          window.scrollTo(0, 0);
+                          setMenuClientOpen(false);
+                        }}
+                      >
+                        Чат с гидом
+                      </Link>
                     </li>
                   </ul>
                 )}
@@ -283,10 +302,26 @@ export const Header = () => {
                 {menuGuideOpen && (
                   <ul>
                     <li>
-                      <Link to="/">Чат с клиентами</Link>
+                      <Link
+                        to="/"
+                        onClick={() => {
+                          window.scrollTo(0, 0);
+                          setMenuGuideOpen(false);
+                        }}
+                      >
+                        Чат с клиентами
+                      </Link>
                     </li>
                     <li>
-                      <Link to="/">Эксперты</Link>
+                      <Link
+                        to="/"
+                        onClick={() => {
+                          window.scrollTo(0, 0);
+                          setMenuGuideOpen(false);
+                        }}
+                      >
+                        Эксперты
+                      </Link>
                     </li>
                   </ul>
                 )}
@@ -301,10 +336,25 @@ export const Header = () => {
                 {menuContactsOpen && (
                   <ul>
                     <li>
-                      <Link to="/about-us">О нас</Link>
+                      <Link
+                        to="/about-us"
+                        onClick={() => {
+                          window.scrollTo(0, 0);
+                          setMenuContactsOpen(false);
+                        }}
+                      >
+                        О нас
+                      </Link>
                     </li>
                     <li>
-                      <div onClick={scrollToFooter}>Поддержка</div>
+                      <div
+                        onClick={() => {
+                          scrollToFooter();
+                          setMenuContactsOpen(false);
+                        }}
+                      >
+                        Поддержка
+                      </div>
                     </li>
                   </ul>
                 )}

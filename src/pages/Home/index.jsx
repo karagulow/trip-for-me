@@ -314,7 +314,9 @@ export const Home = () => {
           />
         </ul>
         <button className={styles.selectionBtn}>
-          <Link to="collections">Показать еще</Link>
+          <Link to="collections" onClick={() => window.scrollTo(0, 0)}>
+            Показать еще
+          </Link>
         </button>
       </div>
       <div className={styles.tour}>
