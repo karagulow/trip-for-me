@@ -314,7 +314,7 @@ export const Home = () => {
           />
         </ul>
         <button className={styles.selectionBtn}>
-          <Link to="">Показать еще</Link>
+          <Link to="collections">Показать еще</Link>
         </button>
       </div>
       <div className={styles.tour}>

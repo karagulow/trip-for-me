@@ -1,0 +1,48 @@
+@import '../../assets/scss/main.scss';
+
+.collections {
+  &Title {
+    font-weight: 900;
+    font-size: 46px;
+    color: $text-color-first;
+    margin-bottom: 127px;
+  }
+
+  &List {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 50px;
+    row-gap: 48px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .collections {
+    margin-bottom: 400px;
+
+    &Title {
+      font-size: 24px;
+      margin-bottom: 52px;
+    }
+
+    &List {
+      position: absolute;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      left: 0;
+      overflow-x: scroll;
+      width: auto;
+      column-gap: 0;
+
+      -ms-overflow-style: none;
+      overflow: -moz-scrollbars-none;
+
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+    }
+  }
+}
