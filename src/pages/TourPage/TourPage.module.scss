@@ -1,0 +1,162 @@
+@import '../../assets/scss/main.scss';
+
+.tour_page {
+  display: flex;
+  flex-direction: column;
+  color: $text-color-first;
+
+  &__title {
+    font-size: 56px;
+    font-weight: 900;
+    margin-bottom: 59px;
+  }
+
+  &__city {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 83px;
+  }
+
+  &__images {
+    display: flex;
+    flex-direction: row;
+    column-gap: 25px;
+    margin-bottom: 231px;
+
+    &Left {
+      width: 45%;
+      height: 600px;
+      border-radius: 30px;
+      object-fit: cover;
+    }
+
+    &Center {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      row-gap: 25px;
+      height: 600px;
+      width: 25%;
+
+      img {
+        border-radius: 30px;
+        height: 287px;
+        object-fit: cover;
+      }
+    }
+
+    &Right {
+      width: 30%;
+      height: 600px;
+      border-radius: 30px;
+      object-fit: cover;
+    }
+  }
+
+  &__about {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 224px;
+
+    &Left {
+      width: 900px;
+    }
+
+    &Right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &Props {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 110px;
+
+      &__item {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+
+        h3 {
+          font-size: 32px;
+          font-weight: 700;
+          color: $text-color-second;
+        }
+
+        p {
+          font-size: 24px;
+          font-weight: 500;
+        }
+      }
+    }
+
+    &Title {
+      font-size: 56px;
+      font-weight: 900;
+      margin-bottom: 46px;
+    }
+
+    &Text {
+      font-size: 26px;
+      font-weight: 500;
+      margin-bottom: 110px;
+    }
+
+    &Route {
+      display: flex;
+      flex-direction: row;
+      column-gap: 190px;
+
+      &__item {
+        display: flex;
+        flex-direction: column;
+        row-gap: 33px;
+
+        h3 {
+          font-size: 30px;
+          font-weight: 700;
+        }
+
+        p {
+          font-size: 23px;
+          font-weight: 500;
+          color: $text-color-second;
+        }
+      }
+    }
+
+    &Guide {
+      display: flex;
+      flex-direction: column;
+      row-gap: 34px;
+
+      &__data {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        img {
+          margin-right: 20px;
+        }
+
+        h3 {
+          font-size: 34px;
+          font-weight: 700;
+        }
+      }
+
+      &__btn {
+        background-color: $accent-color;
+        border-radius: 24px;
+        width: 100%;
+        height: 68px;
+
+        font-size: 34px;
+        font-weight: 700;
+      }
+    }
+  }
+}
