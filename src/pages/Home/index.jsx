@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import styles from './Home.module.scss';
 import { StoriesItem } from '../../components/StoriesItem';
 import { TourItem } from '../../components/TourItem';
+import { SelectionItem } from '../../components/SelectionItem';
 
 export const Home = () => {
   const [city, setCity] = React.useState('');
@@ -298,7 +299,20 @@ export const Home = () => {
         <h1 className={styles.selectionTitle}>
           Необычные подборки для самых смелых
         </h1>
-        <div>подборки!!!!!!!!!!!!!!!!!!!!!!</div>
+        <ul className={styles.selectionList}>
+          <SelectionItem
+            title="Летний вайб"
+            text="Почувствуйте эту летнюю атмосферу в компании приятных людей"
+          />
+          <SelectionItem
+            title="Горячие источники"
+            text="Почувствуйте эту летнюю атмосферу в компании приятных людей"
+          />
+          <SelectionItem
+            title="Снежная пора"
+            text="Почувствуйте эту летнюю атмосферу в компании приятных людей"
+          />
+        </ul>
         <button className={styles.selectionBtn}>
           <Link to="">Показать еще</Link>
         </button>
