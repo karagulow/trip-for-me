@@ -13,7 +13,7 @@ export const Home = () => {
   const [isTouristSelectorOpen, setIsTouristSelectorOpen] =
     React.useState(false);
   const [tempTourists, setTempTourists] = React.useState({
-    adults: 1,
+    adults: 0,
     children: 0,
   });
 
@@ -86,12 +86,6 @@ export const Home = () => {
             onChange={handleCityChange}
             required
           />
-          <datalist id="cities">
-            <option value="Москва" />
-            <option value="Санкт-Петербург" />
-            <option value="Сочи" />
-            {/* Добавьте здесь другие города по вашему выбору */}
-          </datalist>
 
           <input
             className={styles.tour_searchFormDate}

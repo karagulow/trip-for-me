@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import styles from './TourPage.module.scss';
@@ -9,6 +10,25 @@ import { ProgramItem } from '../../components/ProgramItem';
 import { Feedback } from '../../components/Feedback';
 
 export const TourPage = () => {
+  const [adultCount, setAdultCount] = React.useState(0);
+  const [childCount, setChildCount] = React.useState(0);
+
+  const handleDecrease = type => {
+    if (type === 'adult' && adultCount > 0) {
+      setAdultCount(adultCount - 1);
+    } else if (type === 'child' && childCount > 0) {
+      setChildCount(childCount - 1);
+    }
+  };
+
+  const handleIncrease = type => {
+    if (type === 'adult') {
+      setAdultCount(adultCount + 1);
+    } else if (type === 'child') {
+      setChildCount(childCount + 1);
+    }
+  };
+
   return (
     <div className={styles.tour_page}>
       <h1 className={styles.tour_page__title}>Тур “Весенний вайб”</h1>
@@ -21,15 +41,17 @@ export const TourPage = () => {
           src={tourImg}
           alt="tour photo"
         />
-        <div className={styles.tour_page__imagesCenter}>
-          <img src={tourImg} alt="tour photo" />
-          <img src={tourImg} alt="tour photo" />
+        <div className={styles.tour_page__imagesRight}>
+          <div className={styles.tour_page__imagesRight__first}>
+            <img src={tourImg} alt="tour photo" />
+            <img src={tourImg} alt="tour photo" />
+          </div>
+          <img
+            className={styles.tour_page__imagesRight__second}
+            src={tourImg}
+            alt="tour photo"
+          />
         </div>
-        <img
-          className={styles.tour_page__imagesRight}
-          src={tourImg}
-          alt="tour photo"
-        />
       </div>
 
       <div className={styles.tour_page__about}>
@@ -112,7 +134,7 @@ export const TourPage = () => {
                   );
                 })}
               </div>
-              <p className={styles.tour_page__aboutOrder__ratingFeed_back}>
+              <p className={styles.tour_page__aboutOrder__ratingFeedback}>
                 200 отзывов
               </p>
             </div>
@@ -224,6 +246,154 @@ export const TourPage = () => {
             text='Мой опыт с туром "Весенний вайб" был просто незабываемым! В первый день мы посетили сад, где цветы распускались на наших глазах. Я была поражена их красотой и разнообразием. Наблюдать, как природа пробуждается после зимнего сна, было просто волшебно. Второй день мы провели на велосипедных прогулках, и это было так весело и активно! Велосипедные тропы проходили через живописные места, и я наслаждалась великолепными видами и свежим весенним воздухом. Завершением дня был пикник на природе, где мы смогли насладиться замечательной погодой и спокойствием природы. Я отдыхала и расслаблялась, наслаждаясь вкусными закусками и хорошей компанией. В общем, этот тур превзошел все мои ожидания, и я не могу дождаться, чтобы попасть в него снова!'
           />
         </ul>
+      </div>
+
+      <div className={styles.tour_page__reserve}>
+        <h1 className={styles.tour_page__reserveTitle}>Забронировать тур</h1>
+        <form className={styles.tour_page__reserveForm}>
+          <h3 className={styles.tour_page__reserveForm__select_date}>
+            Выбрать дату
+          </h3>
+          <input
+            className={styles.tour_page__reserveForm__input_date}
+            type="text"
+            placeholder="Дата"
+          />
+          <div className={styles.tour_page__reserveForm__tourist}>
+            <div className={styles.tour_page__reserveForm__touristItem}>
+              <p>Взрослый</p>
+              <div
+                className={styles.tour_page__reserveForm__touristItem__price}
+              >
+                <p>2800 ₽</p>
+                <div
+                  className={
+                    styles.tour_page__reserveForm__touristItem__priceCount
+                  }
+                >
+                  <button type="button" onClick={() => handleDecrease('adult')}>
+                    <svg
+                      width="34"
+                      height="34"
+                      viewBox="0 0 34 34"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 34C7.6 34 0 26.4 0 17C0 7.6 7.6 0 17 0C26.4 0 34 7.6 34 17C34 26.4 26.4 34 17 34ZM17 2C8.7 2 2 8.7 2 17C2 25.3 8.7 32 17 32C25.3 32 32 25.3 32 17C32 8.7 25.3 2 17 2Z"
+                        fill="#3578FF"
+                      />
+                      <path d="M8 16H26V18H8V16Z" fill="#3578FF" />
+                    </svg>
+                  </button>
+                  <div
+                    className={
+                      styles.tour_page__reserveForm__touristItem__priceCount__value
+                    }
+                  >
+                    {adultCount}{' '}
+                    {adultCount > 1
+                      ? 'взрослых'
+                      : adultCount === 0
+                      ? 'взрослых'
+                      : 'взрослый'}
+                  </div>
+                  <button type="button" onClick={() => handleIncrease('adult')}>
+                    <svg
+                      width="34"
+                      height="34"
+                      viewBox="0 0 34 34"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 34C7.6 34 0 26.4 0 17C0 7.6 7.6 0 17 0C26.4 0 34 7.6 34 17C34 26.4 26.4 34 17 34ZM17 2C8.7 2 2 8.7 2 17C2 25.3 8.7 32 17 32C25.3 32 32 25.3 32 17C32 8.7 25.3 2 17 2Z"
+                        fill="#3578FF"
+                      />
+                      <path d="M8 16H26V18H8V16Z" fill="#3578FF" />
+                      <path d="M16 8H18V26H16V8Z" fill="#3578FF" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className={styles.tour_page__reserveForm__touristItem}>
+              <p>Детский</p>
+              <div
+                className={styles.tour_page__reserveForm__touristItem__price}
+              >
+                <p>1400 ₽</p>
+                <div
+                  className={
+                    styles.tour_page__reserveForm__touristItem__priceCount
+                  }
+                >
+                  <button type="button" onClick={() => handleDecrease('child')}>
+                    <svg
+                      width="34"
+                      height="34"
+                      viewBox="0 0 34 34"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 34C7.6 34 0 26.4 0 17C0 7.6 7.6 0 17 0C26.4 0 34 7.6 34 17C34 26.4 26.4 34 17 34ZM17 2C8.7 2 2 8.7 2 17C2 25.3 8.7 32 17 32C25.3 32 32 25.3 32 17C32 8.7 25.3 2 17 2Z"
+                        fill="#3578FF"
+                      />
+                      <path d="M8 16H26V18H8V16Z" fill="#3578FF" />
+                    </svg>
+                  </button>
+                  <div
+                    className={
+                      styles.tour_page__reserveForm__touristItem__priceCount__value
+                    }
+                  >
+                    {childCount}{' '}
+                    {childCount > 1
+                      ? 'детей'
+                      : childCount === 0
+                      ? 'детей'
+                      : 'ребенок'}
+                  </div>
+                  <button type="button" onClick={() => handleIncrease('child')}>
+                    <svg
+                      width="34"
+                      height="34"
+                      viewBox="0 0 34 34"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 34C7.6 34 0 26.4 0 17C0 7.6 7.6 0 17 0C26.4 0 34 7.6 34 17C34 26.4 26.4 34 17 34ZM17 2C8.7 2 2 8.7 2 17C2 25.3 8.7 32 17 32C25.3 32 32 25.3 32 17C32 8.7 25.3 2 17 2Z"
+                        fill="#3578FF"
+                      />
+                      <path d="M8 16H26V18H8V16Z" fill="#3578FF" />
+                      <path d="M16 8H18V26H16V8Z" fill="#3578FF" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.tour_page__reserveForm__add}>
+            <div className={styles.tour_page__reserveForm__addItem}>
+              <label for="duration">Длительность</label>
+              <input type="text" name="duration" />
+            </div>
+            <div className={styles.tour_page__reserveForm__addItem}>
+              <label for="place">Место встречи</label>
+              <input type="text" name="place" />
+            </div>
+            <div className={styles.tour_page__reserveForm__addItem}>
+              <label for="phone">Добавить номер телефона для связи</label>
+              <input type="text" name="phone" />
+            </div>
+          </div>
+          <div className={styles.tour_page__reserveForm__footer}>
+            <button type="submit">Забронировать</button>
+            <Link to="#">Есть вопрос?</Link>
+          </div>
+        </form>
       </div>
     </div>
   );

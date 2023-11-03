@@ -5,8 +5,6 @@
   flex-direction: column;
   row-gap: 110px;
 
-  color: $text-color-first;
-
   &__about {
     display: flex;
     flex-direction: row;
@@ -42,5 +40,97 @@
   &__text {
     font-size: 26px;
     font-weight: 500;
+  }
+}
+
+@media (max-width: 1450px) {
+  .programItem {
+    display: block;
+
+    &__about {
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 70px;
+
+      &Day {
+        font-size: 30px;
+      }
+
+      &Name {
+        font-size: 25px;
+      }
+    }
+
+    &__images {
+      position: absolute;
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      flex-wrap: nowrap;
+      left: 0;
+      overflow-x: scroll;
+      width: auto;
+      column-gap: 0;
+
+      -ms-overflow-style: none;
+      overflow: -moz-scrollbars-none;
+
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+
+      img {
+        padding-left: 20px;
+        flex-shrink: 0;
+
+        height: 400px;
+        width: 400px;
+      }
+    }
+
+    &__text {
+      margin-top: 550px;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .programItem {
+    display: block;
+    row-gap: 54px;
+
+    &__about {
+      flex-direction: column;
+      column-gap: 0;
+      row-gap: 20px;
+      align-items: start;
+
+      &Day {
+        border-radius: 20px;
+        padding: 10px 25px;
+
+        font-size: 20px;
+      }
+
+      &Name {
+        font-size: 18px;
+        margin-bottom: 54px;
+      }
+    }
+
+    &__images {
+      img {
+        padding-left: 20px;
+        flex-shrink: 0;
+
+        height: 220px;
+        width: 220px;
+      }
+    }
+
+    &__text {
+      margin-top: 300px;
+      font-size: 16px;
+    }
   }
 }
