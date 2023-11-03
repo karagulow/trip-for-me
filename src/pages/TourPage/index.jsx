@@ -13,19 +13,26 @@ export const TourPage = () => {
   const [adultCount, setAdultCount] = React.useState(0);
   const [childCount, setChildCount] = React.useState(0);
 
+  const [adultPriceCount, setAdultPriceCount] = React.useState(0);
+  const [childPriceCount, setChildPriceCount] = React.useState(0);
+
   const handleDecrease = type => {
     if (type === 'adult' && adultCount > 0) {
       setAdultCount(adultCount - 1);
+      setAdultPriceCount(adultPriceCount - 1400);
     } else if (type === 'child' && childCount > 0) {
       setChildCount(childCount - 1);
+      setChildPriceCount(childPriceCount - 1400);
     }
   };
 
   const handleIncrease = type => {
     if (type === 'adult') {
       setAdultCount(adultCount + 1);
+      setAdultPriceCount(adultPriceCount + 1400);
     } else if (type === 'child') {
       setChildCount(childCount + 1);
+      setChildPriceCount(childPriceCount + 1400);
     }
   };
 
@@ -265,7 +272,7 @@ export const TourPage = () => {
               <div
                 className={styles.tour_page__reserveForm__touristItem__price}
               >
-                <p>2800 ₽</p>
+                <p>{adultPriceCount} ₽</p>
                 <div
                   className={
                     styles.tour_page__reserveForm__touristItem__priceCount
@@ -322,7 +329,7 @@ export const TourPage = () => {
               <div
                 className={styles.tour_page__reserveForm__touristItem__price}
               >
-                <p>1400 ₽</p>
+                <p>{childPriceCount} ₽</p>
                 <div
                   className={
                     styles.tour_page__reserveForm__touristItem__priceCount
