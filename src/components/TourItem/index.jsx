@@ -6,7 +6,7 @@ import tourImg from '../../assets/img/main/tour-img.png';
 export const TourItem = () => {
   return (
     <li className={styles.tourItem}>
-      <Link to="#">
+      <Link to="tours/id" onClick={() => window.scrollTo(0, 0)}>
         <img src={tourImg} alt="tour image" />
         <div className={styles.tourItemText}>
           <h3 className={styles.tourItemText__title}>Атмосферный</h3>

@@ -128,6 +128,91 @@
       }
     }
 
+    &Order {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      background-color: $text-bg-color-first;
+      border-radius: 39px;
+      width: 416px;
+      height: 416px;
+      padding: 31px 25px;
+
+      color: $text-color-first;
+
+      &__price {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &Value {
+          display: flex;
+          flex-direction: column;
+
+          h3 {
+            color: $accent-color;
+            font-size: 50px;
+            font-weight: 700;
+          }
+
+          p {
+            font-size: 21px;
+            font-weight: 500;
+          }
+        }
+
+        &Sale {
+          display: flex;
+          flex-direction: row;
+          column-gap: 12px;
+          align-items: baseline;
+
+          p {
+            font-size: 21px;
+            font-weight: 700;
+          }
+
+          h3 {
+            color: $accent-color;
+            font-size: 36px;
+            font-weight: 700;
+          }
+        }
+      }
+
+      &__btn {
+        background-color: $accent-color;
+        width: 100%;
+        height: 60px;
+        border-radius: 21px;
+
+        font-size: 30px;
+        font-weight: 700;
+
+        a {
+          color: $text-color-first;
+        }
+      }
+
+      &__rating {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &Stars {
+          display: flex;
+          flex-direction: row;
+          column-gap: 1px;
+
+          svg {
+            width: 28px;
+            height: 28px;
+          }
+        }
+      }
+    }
+
     &Guide {
       display: flex;
       flex-direction: column;
