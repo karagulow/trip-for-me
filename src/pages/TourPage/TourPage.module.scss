@@ -244,4 +244,44 @@
       }
     }
   }
+
+  &__program {
+    display: flex;
+    flex-direction: column;
+
+    &Title {
+      font-size: 56px;
+      font-weight: 900;
+      color: $text-color-first;
+      margin-bottom: 110px;
+    }
+
+    &List {
+      display: flex;
+      flex-direction: column;
+      row-gap: 110px;
+      margin-bottom: 160px;
+    }
+  }
+
+  &__cancel {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+
+    background-color: $text-bg-color-first;
+    border-radius: 32px;
+    padding: 36px 55px;
+
+    &Title {
+      color: $accent-color;
+      font-size: 56px;
+      font-weight: 900;
+    }
+
+    &Text {
+      font-size: 30px;
+      font-weight: 700;
+    }
+  }
 }

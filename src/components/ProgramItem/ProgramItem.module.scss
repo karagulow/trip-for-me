@@ -1,0 +1,46 @@
+@import '../../assets/scss/main.scss';
+
+.programItem {
+  display: flex;
+  flex-direction: column;
+  row-gap: 110px;
+
+  color: $text-color-first;
+
+  &__about {
+    display: flex;
+    flex-direction: row;
+    column-gap: 55px;
+    align-items: center;
+
+    &Day {
+      background-color: $text-bg-color-first;
+      border-radius: 32px;
+      padding: 17px 35px;
+
+      font-size: 34px;
+      font-weight: 700;
+    }
+
+    &Name {
+      font-size: 30px;
+      font-weight: 700;
+    }
+  }
+
+  &__images {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    img {
+      height: 447px;
+      width: 447px;
+    }
+  }
+
+  &__text {
+    font-size: 26px;
+    font-weight: 500;
+  }
+}
