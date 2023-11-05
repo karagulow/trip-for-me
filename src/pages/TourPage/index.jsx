@@ -39,6 +39,11 @@ export const TourPage = () => {
 
   const [writeReviewOpen, setWriteReviewOpen] = React.useState(false);
 
+  const scrollToFooter = () => {
+    const footerElement = document.getElementById('footer');
+    footerElement.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className={styles.tour_page}>
       <h1 className={styles.tour_page__title}>Тур “Весенний вайб”</h1>
@@ -415,7 +420,7 @@ export const TourPage = () => {
           </div>
           <div className={styles.tour_page__reserveForm__footer}>
             <button type="submit">Забронировать</button>
-            <Link to="#">Есть вопрос?</Link>
+            <Link onClick={scrollToFooter}>Есть вопрос?</Link>
           </div>
         </form>
       </div>

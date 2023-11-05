@@ -7,6 +7,7 @@ import { Home } from './pages/Home';
 import { Collections } from './pages/Collections';
 import { Tours } from './pages/Tours';
 import { TourPage } from './pages/TourPage';
+import { OrderRegister } from './pages/OrderRegister';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route index element={<Tours />} />
           <Route path="id" element={<TourPage />} />
         </Route>
+        <Route path="order" element={<OrderRegister />} />
       </Route>
     </Routes>
   );

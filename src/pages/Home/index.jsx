@@ -273,7 +273,7 @@ export const Home = () => {
             )}
           </div>
 
-          <button className={styles.tour_searchFormBtn} type="submit">
+          <button className={styles.tour_searchFormBtn} type="button">
             Поиск
           </button>
         </form>

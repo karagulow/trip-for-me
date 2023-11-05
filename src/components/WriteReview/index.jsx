@@ -69,9 +69,9 @@ export const WriteReview = ({ avatar, setWriteReviewOpen }) => {
           </div>
         </div>
         <form className={styles.write_reviewBlock__form}>
-          <textarea type="text" placeholder="Текст отзыва"></textarea>
+          <textarea type="text" placeholder="Текст отзыва" required></textarea>
 
-          <button type="button">Сохранить</button>
+          <button type="submit">Сохранить</button>
         </form>
       </div>
     </div>
