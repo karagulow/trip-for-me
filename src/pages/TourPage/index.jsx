@@ -8,6 +8,7 @@ import programImgFirst from '../../assets/img/tour/program-image-1.png';
 import programImgSecond from '../../assets/img/tour/program-image-2.png';
 import { ProgramItem } from '../../components/ProgramItem';
 import { Feedback } from '../../components/Feedback';
+import { WriteReview } from '../../components/WriteReview';
 
 export const TourPage = () => {
   const [adultCount, setAdultCount] = React.useState(0);
@@ -35,6 +36,8 @@ export const TourPage = () => {
       setChildPriceCount(childPriceCount + 1400);
     }
   };
+
+  const [writeReviewOpen, setWriteReviewOpen] = React.useState(false);
 
   return (
     <div className={styles.tour_page}>
@@ -235,9 +238,23 @@ export const TourPage = () => {
               })}
             </div>
           </div>
-          <button className={styles.tour_page__feedbacksTop__btn}>
-            <Link to="#">Оставить отзыв</Link>
+          <button
+            className={styles.tour_page__feedbacksTop__btn}
+            onClick={() => {
+              setWriteReviewOpen(true);
+              document.body.style.overflow = 'hidden';
+            }}
+          >
+            Оставить отзыв
           </button>
+          {writeReviewOpen ? (
+            <WriteReview
+              avatar={guideAvatar}
+              setWriteReviewOpen={setWriteReviewOpen}
+            />
+          ) : (
+            <></>
+          )}
         </div>
         <ul className={styles.tour_page__feedbacksList}>
           <Feedback
