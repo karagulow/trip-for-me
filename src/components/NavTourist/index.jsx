@@ -37,7 +37,7 @@ export const NavTourist = () => {
         </li>
         <li className={styles.navList__item}>
           <NavLink
-            to="/lk/tourist/reviews"
+            to="/lk/tourist/support"
             className={setActive}
             onClick={() => window.scrollTo(0, 0)}
           >
