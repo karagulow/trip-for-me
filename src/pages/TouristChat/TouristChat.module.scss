@@ -1,1 +1,16 @@
 @import '../../assets/scss/main.scss';
+
+.tourist_chat {
+  display: flex;
+  flex-direction: row;
+  column-gap: 40px;
+  color: $text-color-first;
+}
+
+@media (max-width: 1400px) {
+  .tourist_chat {
+    flex-direction: column;
+    column-gap: 0;
+    row-gap: 43px;
+  }
+}
