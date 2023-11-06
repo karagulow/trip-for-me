@@ -8,6 +8,9 @@ import { Collections } from './pages/Collections';
 import { Tours } from './pages/Tours';
 import { TourPage } from './pages/TourPage';
 import { OrderRegister } from './pages/OrderRegister';
+import { TouristProfile } from './pages/TouristProfile';
+import { TouristChat } from './pages/TouristChat';
+import { TouristReviews } from './pages/TouristReviews';
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
           <Route path="id" element={<TourPage />} />
         </Route>
         <Route path="order" element={<OrderRegister />} />
+        <Route path="lk/tourist/id" element={<TouristProfile />} />
+        <Route path="lk/tourist/chat" element={<TouristChat />} />
+        <Route path="lk/tourist/reviews" element={<TouristReviews />} />
       </Route>
     </Routes>
   );

@@ -1,0 +1,220 @@
+@import '../../assets/scss/main.scss';
+
+.tourist_profile {
+  display: flex;
+  flex-direction: row;
+  column-gap: 40px;
+  color: $text-color-first;
+
+  &Content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 22px;
+    width: 100%;
+
+    &__user {
+      display: flex;
+      flex-direction: row;
+      column-gap: 50px;
+
+      background-color: $text-bg-color-first;
+      border-radius: 38px;
+      padding: 46px 41px;
+      width: 100%;
+
+      &Avatar {
+        position: relative;
+
+        img {
+          min-width: 160px;
+          min-height: 160px;
+        }
+
+        &__edit {
+          position: absolute;
+          top: 9px;
+          right: 9px;
+          cursor: pointer;
+        }
+      }
+
+      &About {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+
+        &__name {
+          font-size: 36px;
+          font-weight: 700;
+        }
+
+        &__bottom {
+          display: flex;
+          flex-direction: row;
+          column-gap: 50px;
+          justify-content: space-between;
+
+          &Item {
+            display: flex;
+            flex-direction: row;
+            column-gap: 29px;
+            align-items: center;
+
+            &__title {
+              font-size: 28px;
+              font-weight: 500;
+            }
+
+            &__count {
+              font-size: 36px;
+              font-weight: 700;
+              color: $accent-color;
+            }
+          }
+        }
+      }
+    }
+
+    &__tours {
+      display: flex;
+      flex-direction: column;
+      row-gap: 70px;
+
+      background-color: $text-bg-color-first;
+      border-radius: 38px;
+      padding: 46px 41px;
+
+      &Title {
+        font-size: 36px;
+        font-weight: 700;
+      }
+
+      &List {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .tourist_profile {
+    flex-direction: column;
+    column-gap: 0;
+    row-gap: 43px;
+
+    &Content {
+      row-gap: 37px;
+
+      &__user {
+        column-gap: 18px;
+
+        border-radius: 20px;
+        padding: 18px 20px;
+
+        &Avatar {
+          img {
+            min-width: 83px;
+            min-height: 83px;
+            max-width: 83px;
+            max-height: 83px;
+          }
+
+          &__edit {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            cursor: pointer;
+
+            svg {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+
+        &About {
+          flex-direction: column;
+          row-gap: 34px;
+          justify-content: space-between;
+
+          &__name {
+            font-size: 22px;
+          }
+
+          &__bottom {
+            flex-direction: column;
+            column-gap: 0;
+            row-gap: 28px;
+            justify-content: start;
+
+            &Item {
+              display: flex;
+              flex-direction: row;
+              column-gap: 0;
+              justify-content: space-between;
+
+              &__title {
+                font-size: 18px;
+              }
+
+              &__count {
+                font-size: 22px;
+              }
+            }
+          }
+        }
+      }
+
+      &__tours {
+        padding: 20px;
+        row-gap: 50px;
+
+        &Title {
+          font-size: 28px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .tourist_profile {
+    &Content {
+      &__tours {
+        row-gap: 47px;
+        margin-bottom: 350px;
+
+        background-color: transparent;
+        border-radius: 20px;
+        padding: 0px;
+
+        &Title {
+          font-size: 22px;
+        }
+
+        &List {
+          justify-content: start;
+          position: absolute;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          left: 0;
+          overflow-x: scroll;
+          width: auto;
+          column-gap: 0;
+          margin-top: 50px;
+
+          -ms-overflow-style: none;
+          overflow: -moz-scrollbars-none;
+
+          &::-webkit-scrollbar {
+            width: 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -11,14 +11,14 @@ import { Feedback } from '../../components/Feedback';
 import { WriteReview } from '../../components/WriteReview';
 
 export const TourPage = () => {
-  const [adultCount, setAdultCount] = React.useState(0);
+  const [adultCount, setAdultCount] = React.useState(1);
   const [childCount, setChildCount] = React.useState(0);
 
-  const [adultPriceCount, setAdultPriceCount] = React.useState(0);
+  const [adultPriceCount, setAdultPriceCount] = React.useState(1400);
   const [childPriceCount, setChildPriceCount] = React.useState(0);
 
   const handleDecrease = type => {
-    if (type === 'adult' && adultCount > 0) {
+    if (type === 'adult' && adultCount > 1) {
       setAdultCount(adultCount - 1);
       setAdultPriceCount(adultPriceCount - 1400);
     } else if (type === 'child' && childCount > 0) {
@@ -287,6 +287,7 @@ export const TourPage = () => {
             className={styles.tour_page__reserveForm__input_date}
             type="text"
             placeholder="Дата"
+            required
           />
           <div className={styles.tour_page__reserveForm__tourist}>
             <div className={styles.tour_page__reserveForm__touristItem}>

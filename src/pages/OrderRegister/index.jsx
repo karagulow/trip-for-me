@@ -48,7 +48,7 @@ export const OrderRegister = () => {
           </div>
           <div className={styles.orderBlock__right__mail}>
             <form className={styles.orderBlock__right__mailForm}>
-              <input type="text" placeholder="Введите Email" />
+              <input type="text" placeholder="Введите Email" required />
               <button>Отправить чек на почту</button>
             </form>
           </div>

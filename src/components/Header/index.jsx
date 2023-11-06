@@ -7,7 +7,7 @@ import avatar from '../../assets/img/main/avatar.png';
 import { Notification } from '../Notification';
 
 export const Header = () => {
-  const [isAuth, setIsAuth] = React.useState(true); // ВРМЕННО! ПЕРЕНЕСТИ В REDUX!
+  const [isAuth, setIsAuth] = React.useState(false); // ВРМЕННО! ПЕРЕНЕСТИ В REDUX!
 
   const scrollToFooter = () => {
     const footerElement = document.getElementById('footer');
