@@ -131,6 +131,7 @@ export const Home = () => {
                     className={styles.tour_searchFormTourists__selector__item}
                   >
                     <button
+                      type="button"
                       onClick={() =>
                         updateTempTourists('adults', tempTourists.adults - 1)
                       }
@@ -161,6 +162,7 @@ export const Home = () => {
                       {tempTourists.adults > 1 ? 'взрослых' : 'взрослый'}
                     </div>
                     <button
+                      type="button"
                       onClick={() =>
                         updateTempTourists('adults', tempTourists.adults + 1)
                       }
@@ -196,6 +198,7 @@ export const Home = () => {
                     className={styles.tour_searchFormTourists__selector__item}
                   >
                     <button
+                      type="button"
                       onClick={() =>
                         updateTempTourists(
                           'children',
@@ -229,6 +232,7 @@ export const Home = () => {
                       {tempTourists.children > 1 ? 'детей' : 'ребенок'}
                     </div>
                     <button
+                      type="button"
                       onClick={() =>
                         updateTempTourists(
                           'children',
