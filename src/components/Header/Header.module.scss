@@ -291,6 +291,10 @@ header {
               color: $text-color-first;
               align-items: center;
 
+              div {
+                cursor: pointer;
+              }
+
               a {
                 width: 100%;
                 color: $text-color-first;

@@ -13,10 +13,12 @@
   border-radius: 35px;
 
   padding: 32px 40px 50px;
+  color: $text-color-first;
 
   img {
     height: 109px;
     width: 109px;
+    border-radius: 50%;
   }
 
   &__content {
@@ -63,6 +65,7 @@
     border-radius: 20px;
 
     padding: 20px 13px;
+    color: $text-color-first;
 
     &__user {
       display: flex;
@@ -73,6 +76,7 @@
       img {
         height: 78px;
         width: 78px;
+        border-radius: 50%;
       }
 
       h3 {

@@ -144,7 +144,7 @@ export const Header = () => {
                         <li>
                           <div className={styles.circle}></div>
                           <Link
-                            to="/"
+                            to="/lk/tourist/chat"
                             onClick={() => {
                               closeMobileMenu();
                               window.scrollTo(0, 0);
@@ -205,7 +205,14 @@ export const Header = () => {
                         </li>
                         <li>
                           <div className={styles.circle}></div>
-                          <div onClick={scrollToFooter}>Поддержка</div>
+                          <div
+                            onClick={() => {
+                              scrollToFooter();
+                              closeMobileMenu();
+                            }}
+                          >
+                            Поддержка
+                          </div>
                         </li>
                       </ul>
                     </li>
@@ -283,7 +290,7 @@ export const Header = () => {
                     </li>
                     <li>
                       <Link
-                        to="/"
+                        to="/lk/tourist/chat"
                         onClick={() => {
                           window.scrollTo(0, 0);
                           setMenuClientOpen(false);
@@ -362,7 +369,12 @@ export const Header = () => {
             </ul>
             <ul className={styles.navUser}>
               <li className={styles.navUser__item}>
-                <Link to="/">
+                <Link
+                  to="/lk/tourist/support"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                  }}
+                >
                   <svg
                     width="31"
                     height="31"
