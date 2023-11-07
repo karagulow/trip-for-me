@@ -20,6 +20,7 @@
     display: flex;
     flex-direction: column;
     top: 140px;
+    width: 966px;
 
     background-color: $bg-color-first;
     border-radius: 40px;
@@ -48,7 +49,7 @@
         background-color: $text-bg-color-first;
         border-radius: 40px;
         padding: 16px 34px;
-        width: 966px;
+        width: 100%;
         height: 70px;
       }
 
@@ -78,6 +79,11 @@
         border: 3px solid $accent-color;
         border-radius: 50%;
       }
+
+      &Text {
+        font-size: 32px;
+        font-weight: 500;
+      }
     }
 
     &__forgot_password {
@@ -104,6 +110,92 @@
       &Items {
         margin: 0 auto;
       }
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .login {
+    &Block {
+      top: 120px;
+      width: 600px;
+
+      border-radius: 20px;
+      padding: 63px 20px;
+
+      &__close {
+        top: 23px;
+        right: 32px;
+        width: 14px;
+        height: 14px;
+      }
+
+      &__title {
+        font-size: 24px;
+        margin-bottom: 30px;
+      }
+
+      &__form {
+        row-gap: 21px;
+        margin-bottom: 28px;
+
+        input {
+          padding: 10px 18px;
+          height: 36px;
+
+          font-size: 14px;
+        }
+
+        &Btn {
+          width: 100%;
+          height: 44px;
+          border-radius: 20px;
+
+          font-size: 20px;
+        }
+      }
+
+      &__role {
+        column-gap: 16px;
+        margin-bottom: 31px;
+
+        &Circle {
+          width: 25px;
+          height: 25px;
+          border: 2px solid $accent-color;
+        }
+
+        &Text {
+          font-size: 18px;
+        }
+      }
+
+      &__forgot_password {
+        margin-bottom: 34px;
+        font-size: 16px;
+      }
+
+      &__other {
+        p {
+          font-size: 20px;
+          margin-bottom: 27px;
+        }
+
+        &Items {
+          svg {
+            width: 48px;
+            height: 48px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .login {
+    &Block {
+      width: 90%;
     }
   }
 }
