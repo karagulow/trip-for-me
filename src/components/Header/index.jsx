@@ -5,6 +5,7 @@ import styles from './Header.module.scss';
 import logo from '../../assets/img/main/logo.svg';
 import avatar from '../../assets/img/main/avatar.png';
 import { Notification } from '../Notification';
+import { Login } from '../Login';
 
 export const Header = () => {
   const [isAuth, setIsAuth] = React.useState(false); // ВРМЕННО! ПЕРЕНЕСТИ В REDUX!
@@ -30,6 +31,8 @@ export const Header = () => {
     setMenuNavOpen(true);
     document.body.style.overflow = 'hidden';
   };
+
+  const [loginOpen, setLoginOpen] = React.useState(false);
 
   const closeMobileMenu = () => {
     setMenuNavOpen(false);
@@ -438,8 +441,17 @@ export const Header = () => {
                   </svg>
                 </div>
               ) : (
-                <button className={styles.navUser__login}>Вход</button>
+                <button
+                  className={styles.navUser__login}
+                  onClick={() => {
+                    setLoginOpen(true);
+                    document.body.style.overflow = 'hidden';
+                  }}
+                >
+                  Вход
+                </button>
               )}
+              {loginOpen ? <Login setLoginOpen={setLoginOpen} /> : <></>}
             </ul>
           </div>
         </div>

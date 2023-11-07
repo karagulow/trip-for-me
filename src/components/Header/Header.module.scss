@@ -98,6 +98,11 @@ header {
       &__item {
         position: relative;
 
+        a {
+          height: 31px;
+          width: 31px;
+        }
+
         &List {
           position: absolute;
           display: flex;
@@ -157,10 +162,10 @@ header {
         }
       }
 
-      a {
-        height: 31px;
-        width: 31px;
-      }
+      // a {
+      //   height: 31px;
+      //   width: 31px;
+      // }
 
       &__is_auth {
         display: flex;
@@ -332,7 +337,7 @@ header {
 
           &List {
             right: auto;
-            left: -70px;
+            left: -110px;
 
             &Note {
               &__left {
