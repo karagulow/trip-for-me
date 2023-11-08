@@ -1,0 +1,98 @@
+@import '../../assets/scss/main.scss';
+
+.nav {
+  width: 260px;
+
+  &List {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+
+    background-color: $text-bg-color-first;
+    border-radius: 38px;
+    width: 100%;
+    padding: 27px 30px;
+
+    &__item {
+      font-size: 36px;
+      font-weight: 500;
+
+      a {
+        color: $text-color-first;
+
+        &.active {
+          font-weight: 700;
+          color: $accent-color;
+        }
+      }
+    }
+  }
+
+  &Support {
+    display: flex;
+    flex-direction: row;
+    column-gap: 17px;
+    align-items: center;
+
+    svg {
+      width: 33px;
+      height: 33px;
+    }
+
+    p {
+      font-size: 24px;
+      font-weight: 700;
+      color: $text-color-first;
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .nav {
+    width: 100%;
+
+    &List {
+      flex-direction: row;
+      row-gap: 0;
+      justify-content: space-between;
+
+      background-color: transparent;
+      border-radius: 0;
+      width: 100%;
+      padding: 0;
+      padding-bottom: 14px;
+      border-bottom: 1px solid $accent-color;
+
+      &__item {
+        font-size: 30px;
+
+        a {
+          padding-bottom: 12px;
+          &.active {
+            border-bottom: 6px solid $accent-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .nav {
+    &List {
+      &__item {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .nav {
+    &List {
+      &__item {
+        font-size: 12px;
+      }
+    }
+  }
+}

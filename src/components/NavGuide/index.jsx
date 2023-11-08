@@ -1,16 +1,16 @@
 import { NavLink } from 'react-router-dom';
 
-import styles from './NavTourist.module.scss';
+import styles from './NavGuide.module.scss';
 
 const setActive = ({ isActive }) => (isActive ? styles.active : '');
 
-export const NavTourist = () => {
+export const NavGuide = () => {
   return (
     <div className={styles.nav}>
       <ul className={styles.navList}>
         <li className={styles.navList__item}>
           <NavLink
-            to="/lk/tourist/id"
+            to="/lk/guide/id"
             className={setActive}
             onClick={() => window.scrollTo(0, 0)}
           >
@@ -19,7 +19,7 @@ export const NavTourist = () => {
         </li>
         <li className={styles.navList__item}>
           <NavLink
-            to="/lk/tourist/chat"
+            to="/lk/guide/chat"
             className={setActive}
             onClick={() => window.scrollTo(0, 0)}
           >
@@ -28,7 +28,7 @@ export const NavTourist = () => {
         </li>
         <li className={styles.navList__item}>
           <NavLink
-            to="/lk/tourist/reviews"
+            to="/lk/guide/reviews"
             className={setActive}
             onClick={() => window.scrollTo(0, 0)}
           >
@@ -37,7 +37,16 @@ export const NavTourist = () => {
         </li>
         <li className={styles.navList__item}>
           <NavLink
-            to="/lk/tourist/support"
+            to="/lk/guide/analytics"
+            className={setActive}
+            onClick={() => window.scrollTo(0, 0)}
+          >
+            Аналитика
+          </NavLink>
+        </li>
+        <li className={styles.navList__item}>
+          <NavLink
+            to="/lk/guide/support"
             className={setActive}
             onClick={() => window.scrollTo(0, 0)}
           >
