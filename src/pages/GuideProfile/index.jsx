@@ -6,9 +6,11 @@ import avatar from '../../assets/img/main/avatar.png';
 
 import { NavGuide } from '../../components/NavGuide';
 import { TourItem } from '../../components/TourItem';
+import { AddCard } from '../../components/AddCard';
 
 export const GuideProfile = () => {
   const [isProfileMain, setIsProfileMain] = React.useState(true);
+  const [addCardOpen, setAddCardOpen] = React.useState(false);
 
   return (
     <div className={styles.guide_profile}>
@@ -172,9 +174,16 @@ export const GuideProfile = () => {
                 </p>
               </li>
             </ul>
-            <button className={styles.guide_profileAdd__cardsBtn}>
+            <button
+              className={styles.guide_profileAdd__cardsBtn}
+              onClick={() => {
+                setAddCardOpen(true);
+                document.body.style.overflow = 'hidden';
+              }}
+            >
               Добавить карту
             </button>
+            {addCardOpen && <AddCard setAddCardOpen={setAddCardOpen} />}
           </div>
         </div>
       )}

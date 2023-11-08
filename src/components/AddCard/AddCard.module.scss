@@ -1,0 +1,143 @@
+@import '../../assets/scss/main.scss';
+
+.add_card {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgb(255, 255, 255, 0.5);
+  z-index: 11;
+  overflow-y: hidden;
+
+  &Block {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    background-color: $bg-color-first;
+    border-radius: 40px;
+    padding: 110px;
+    width: 900px;
+
+    &__close {
+      position: absolute;
+      top: 44px;
+      right: 42px;
+      cursor: pointer;
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &Number {
+        background-color: $text-bg-color-first;
+        border-radius: 40px;
+        width: 100%;
+        height: 70px;
+        padding: 16px 34px;
+
+        font-size: 32px;
+        font-weight: 500;
+        margin-bottom: 60px;
+      }
+
+      &Code {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 100px;
+        column-gap: 70px;
+
+        &__period {
+          background-color: $text-bg-color-first;
+          border-radius: 40px;
+          width: 100%;
+          height: 70px;
+          padding: 16px 34px;
+
+          font-size: 32px;
+          font-weight: 500;
+        }
+
+        &__cvc {
+          background-color: $text-bg-color-first;
+          border-radius: 40px;
+          width: 100%;
+          height: 70px;
+          padding: 16px 34px;
+
+          font-size: 32px;
+          font-weight: 500;
+        }
+      }
+
+      &Btn {
+        background-color: $accent-color;
+        border-radius: 40px;
+        width: 382px;
+        height: 69px;
+        font-size: 36px;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .add_card {
+    &Block {
+      border-radius: 20px;
+      padding: 77px 15px 33px;
+      width: 90%;
+
+      &__close {
+        top: 23px;
+        right: 32px;
+      }
+
+      &__form {
+        &Number {
+          width: 100%;
+          height: 38px;
+          padding: 10px 15px;
+
+          font-size: 16px;
+          margin-bottom: 23px;
+        }
+
+        &Code {
+          width: 100%;
+          margin-bottom: 212px;
+          column-gap: 23px;
+
+          &__period {
+            height: 38px;
+            padding: 10px 15px;
+
+            font-size: 16px;
+          }
+
+          &__cvc {
+            height: 38px;
+            padding: 10px 15px;
+
+            font-size: 16px;
+          }
+        }
+
+        &Btn {
+          border-radius: 20px;
+          width: 100%;
+          height: 44px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
