@@ -14,7 +14,7 @@ export const NavGuide = ({ setIsProfileMain }) => {
             className={setActive}
             onClick={() => {
               window.scrollTo(0, 0);
-              setIsProfileMain(false);
+              setIsProfileMain(true);
             }}
           >
             Профиль
