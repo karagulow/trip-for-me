@@ -4,7 +4,7 @@ import styles from './NavGuide.module.scss';
 
 const setActive = ({ isActive }) => (isActive ? styles.active : '');
 
-export const NavGuide = () => {
+export const NavGuide = ({ setIsProfileMain }) => {
   return (
     <div className={styles.nav}>
       <ul className={styles.navList}>
@@ -12,7 +12,10 @@ export const NavGuide = () => {
           <NavLink
             to="/lk/guide/id"
             className={setActive}
-            onClick={() => window.scrollTo(0, 0)}
+            onClick={() => {
+              window.scrollTo(0, 0);
+              setIsProfileMain(false);
+            }}
           >
             Профиль
           </NavLink>

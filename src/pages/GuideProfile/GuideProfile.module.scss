@@ -1,1 +1,391 @@
 @import '../../assets/scss/main.scss';
+
+.guide_profile {
+  display: flex;
+  flex-direction: row;
+  column-gap: 40px;
+  color: $text-color-first;
+
+  &Content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 22px;
+    width: 100%;
+
+    &__user {
+      display: flex;
+      flex-direction: row;
+      column-gap: 50px;
+
+      background-color: $text-bg-color-first;
+      border-radius: 38px;
+      padding: 46px 41px;
+      width: 100%;
+
+      &Avatar {
+        position: relative;
+
+        img {
+          min-width: 160px;
+          min-height: 160px;
+        }
+
+        &__edit {
+          position: absolute;
+          top: 9px;
+          right: 9px;
+          cursor: pointer;
+        }
+      }
+
+      &About {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+
+        &__top {
+          display: flex;
+          flex-direction: row;
+          column-gap: 40px;
+          align-items: center;
+
+          &Name {
+            font-size: 30px;
+            font-weight: 700;
+          }
+
+          &Balance {
+            background-color: $text-bg-color-second;
+            border-radius: 15px;
+            padding: 10px 67px;
+            font-size: 24px;
+            font-weight: 700;
+            color: $accent-color;
+          }
+
+          &Btn {
+            background-color: $accent-color;
+            border-radius: 14px;
+            width: 144px;
+            height: 33px;
+            color: $text-color-first;
+
+            font-size: 16px;
+            font-weight: 700;
+          }
+        }
+
+        &__bottom {
+          display: flex;
+          flex-direction: row;
+          column-gap: 50px;
+          justify-content: space-between;
+
+          &Item {
+            display: flex;
+            flex-direction: row;
+            column-gap: 29px;
+            align-items: center;
+
+            &__title {
+              font-size: 24px;
+              font-weight: 500;
+            }
+
+            &__count {
+              font-size: 32px;
+              font-weight: 700;
+              color: $accent-color;
+            }
+          }
+        }
+      }
+    }
+
+    &__tours {
+      display: flex;
+      flex-direction: column;
+      row-gap: 70px;
+
+      background-color: $text-bg-color-first;
+      border-radius: 38px;
+      padding: 46px 41px;
+
+      &Top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &__left {
+          display: flex;
+          flex-direction: row;
+          column-gap: 68px;
+          align-items: center;
+
+          &Title {
+            font-size: 36px;
+            font-weight: 700;
+          }
+
+          &Btn {
+            width: 144px;
+            height: 33px;
+            background-color: $accent-color;
+            border-radius: 14px;
+
+            font-size: 16px;
+            font-weight: 700;
+
+            a {
+              color: $text-color-first;
+            }
+          }
+        }
+
+        &__right {
+          display: flex;
+          flex-direction: row;
+          column-gap: 30px;
+          align-items: center;
+
+          button {
+            width: 193px;
+            height: 44px;
+            background-color: $text-bg-color-second;
+            border-radius: 14px;
+          }
+
+          &Active {
+            font-size: 21px;
+            font-weight: 700;
+          }
+
+          &Past {
+            border: 1px solid $accent-color;
+            font-size: 21px;
+            font-weight: 700;
+            color: $accent-color;
+          }
+        }
+      }
+
+      &List {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .guide_profile {
+    flex-direction: column;
+    column-gap: 0;
+    row-gap: 43px;
+
+    &Content {
+      row-gap: 37px;
+
+      &__user {
+        column-gap: 18px;
+
+        border-radius: 20px;
+        padding: 18px 20px;
+
+        &Avatar {
+          img {
+            min-width: 83px;
+            min-height: 83px;
+            max-width: 83px;
+            max-height: 83px;
+          }
+
+          &__edit {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            cursor: pointer;
+
+            svg {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+
+        &About {
+          position: relative;
+          flex-direction: column;
+          row-gap: 34px;
+          justify-content: space-between;
+
+          &__top {
+            &Name {
+              font-size: 22px;
+            }
+
+            &Balance {
+              padding: 8px 40px;
+              font-size: 20px;
+            }
+          }
+
+          &__bottom {
+            flex-direction: column;
+            column-gap: 0;
+            row-gap: 28px;
+            justify-content: start;
+            width: 270px;
+
+            &Item {
+              display: flex;
+              flex-direction: row;
+              column-gap: 0;
+              justify-content: space-between;
+
+              &__title {
+                font-size: 18px;
+              }
+
+              &__count {
+                font-size: 22px;
+              }
+            }
+          }
+        }
+      }
+
+      &__tours {
+        padding: 20px;
+        row-gap: 50px;
+
+        &Top {
+          &__left {
+            &Title {
+              font-size: 28px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .guide_profile {
+    &Content {
+      &__tours {
+        row-gap: 47px;
+        margin-bottom: 350px;
+
+        background-color: transparent;
+        border-radius: 20px;
+        padding: 0px;
+
+        &Top {
+          &__left {
+            column-gap: 30px;
+            &Title {
+              font-size: 22px;
+            }
+          }
+        }
+
+        &List {
+          justify-content: start;
+          position: absolute;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          left: 0;
+          overflow-x: scroll;
+          width: auto;
+          column-gap: 0;
+          margin-top: 70px;
+
+          -ms-overflow-style: none;
+          overflow: -moz-scrollbars-none;
+
+          &::-webkit-scrollbar {
+            width: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .guide_profile {
+    &Content {
+      &__user {
+        padding-bottom: 210px;
+        &About {
+          position: relative;
+
+          &__top {
+            flex-direction: column;
+            row-gap: 20px;
+            align-items: start;
+
+            &Balance {
+              font-size: 18px;
+              padding: 4px 37px;
+            }
+
+            &Btn {
+              width: 155px;
+              height: 33px;
+              font-size: 16px;
+            }
+          }
+
+          &__bottom {
+            position: absolute;
+            width: 255px;
+            top: 170px;
+            left: -100px;
+          }
+        }
+      }
+
+      &__tours {
+        &Top {
+          flex-direction: column;
+          row-gap: 36px;
+
+          &__right {
+            column-gap: 20px;
+            justify-content: space-between;
+
+            button {
+              width: 152px;
+              font-size: 18px;
+            }
+          }
+        }
+
+        &List {
+          margin-top: 170px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 373px) {
+  .guide_profile {
+    &Content {
+      &__user {
+        padding-bottom: 210px;
+        &About {
+          &__bottom {
+            top: 210px;
+          }
+        }
+      }
+    }
+  }
+}
