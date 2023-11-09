@@ -1,0 +1,66 @@
+@import '../../assets/scss/main.scss';
+
+.reviews {
+  display: flex;
+  flex-direction: row;
+  column-gap: 40px;
+  color: $text-color-first;
+
+  &Content {
+    display: flex;
+    flex-direction: column;
+
+    &__top {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 55px;
+
+      &Title {
+        font-size: 36px;
+        font-weight: 700;
+      }
+    }
+
+    &__tour_name {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 65px;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 32px;
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .reviews {
+    flex-direction: column;
+    row-gap: 70px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .reviews {
+    &Content {
+      &__top {
+        flex-direction: column-reverse;
+        justify-content: start;
+        row-gap: 28px;
+        margin-bottom: 28px;
+
+        &Title {
+          font-size: 22px;
+        }
+      }
+
+      &__tour_name {
+        font-size: 18px;
+        margin-bottom: 37px;
+      }
+    }
+  }
+}

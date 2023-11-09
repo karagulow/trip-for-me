@@ -13,6 +13,8 @@ import { TouristChat } from './pages/TouristChat';
 import { TouristReviews } from './pages/TouristReviews';
 import { TouristSupport } from './pages/TouristSupport';
 import { GuideProfile } from './pages/GuideProfile';
+import { GuideChat } from './pages/GuideChat';
+import { GuideReviews } from './pages/GuideReviews';
 
 function App() {
   return (
@@ -30,10 +32,10 @@ function App() {
         <Route path="lk/tourist/chat" element={<TouristChat />} />
         <Route path="lk/tourist/reviews" element={<TouristReviews />} />
         <Route path="lk/tourist/support" element={<TouristSupport />} />
-        <Route path="lk/guide/id/">
-          <Route index element={<GuideProfile />} />
-          {/* <Route path="id" element={<TourPage />} /> */}
-        </Route>
+        <Route path="lk/guide/id" element={<GuideProfile />} />
+        <Route path="lk/guide/chat" element={<GuideChat />} />
+        <Route path="lk/guide/reviews" element={<GuideReviews />} />
+        <Route path="lk/guide/support" element={<GuideChat />} />
       </Route>
     </Routes>
   );
