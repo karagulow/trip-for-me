@@ -1,0 +1,135 @@
+@import '../../assets/scss/main.scss';
+
+.analytics {
+  display: flex;
+  flex-direction: row;
+  column-gap: 40px;
+  color: $text-color-first;
+
+  &Block {
+    display: flex;
+    flex-direction: column;
+    row-gap: 128px;
+    width: 100%;
+
+    &__row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      &Item {
+        background-color: $text-bg-color-first;
+        border-radius: 38px;
+        padding: 30px;
+        width: 532px;
+        height: 719px;
+
+        &__title {
+          font-size: 32px;
+          font-weight: 700;
+          margin-bottom: 40px;
+        }
+
+        &__text {
+          font-size: 24px;
+          font-weight: 600;
+          margin-bottom: 40px;
+
+          span {
+            font-size: 28px;
+            color: $accent-color;
+          }
+        }
+
+        &__accent {
+          font-size: 24px;
+          font-weight: 600;
+          color: $accent-color;
+          margin-bottom: 20px;
+        }
+
+        &__search {
+          background-color: $text-bg-color-second;
+          border-radius: 40px;
+          padding: 12px 35px;
+          width: 100%;
+          margin-bottom: 40px;
+
+          font-size: 20px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .analytics {
+    flex-direction: column;
+    row-gap: 40px;
+
+    &Block {
+      row-gap: 70px;
+    }
+  }
+}
+
+@media (max-width: 1150px) {
+  .analytics {
+    &Block {
+      row-gap: 25px;
+
+      &__row {
+        flex-direction: column;
+        row-gap: 25px;
+        align-items: center;
+
+        &Item {
+          width: 700px;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .analytics {
+    &Block {
+      &__row {
+        &Item {
+          border-radius: 20px;
+          width: 100%;
+          padding: 20px;
+
+          &__title {
+            font-size: 20px;
+            margin-bottom: 20px;
+          }
+
+          &__text {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 20px;
+
+            span {
+              font-size: 22px;
+            }
+          }
+
+          &__accent {
+            font-size: 22px;
+            margin-bottom: 15px;
+          }
+
+          &__search {
+            padding: 10px 18px;
+            margin-bottom: 20px;
+
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -15,6 +15,7 @@ import { TouristSupport } from './pages/TouristSupport';
 import { GuideProfile } from './pages/GuideProfile';
 import { GuideChat } from './pages/GuideChat';
 import { GuideReviews } from './pages/GuideReviews';
+import { GuideAnalytics } from './pages/GuideAnalytics';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="lk/guide/chat" element={<GuideChat />} />
         <Route path="lk/guide/reviews" element={<GuideReviews />} />
         <Route path="lk/guide/support" element={<GuideChat />} />
+        <Route path="lk/guide/analytics" element={<GuideAnalytics />} />
       </Route>
     </Routes>
   );
