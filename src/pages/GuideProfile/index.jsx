@@ -125,7 +125,7 @@ export const GuideProfile = () => {
                 <button
                   className={styles.guide_profileContent__toursTop__leftBtn}
                 >
-                  <Link to="#">Создать тур</Link>
+                  <Link to="/lk/guide/create-tour">Создать тур</Link>
                 </button>
               </div>
               <div className={styles.guide_profileContent__toursTop__right}>
