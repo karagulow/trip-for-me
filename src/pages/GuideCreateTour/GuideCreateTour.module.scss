@@ -127,12 +127,17 @@
         grid-template-columns: 1fr 3fr 4fr 5fr 3fr;
         line-height: 2;
 
+        span {
+          display: none;
+        }
+
         &__delete {
           position: absolute;
           width: 33px;
           height: 33px;
           right: 0;
           top: 0;
+          cursor: pointer;
         }
 
         &__edit {
@@ -141,6 +146,7 @@
           height: 33px;
           right: 0;
           bottom: 0;
+          cursor: pointer;
         }
       }
     }
@@ -183,4 +189,155 @@
 }
 
 @media (max-width: 1000px) {
+  .template {
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 44px;
+
+    &Title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 34px;
+    }
+
+    &Text {
+      font-size: 16px;
+      margin-bottom: 34px;
+    }
+
+    &Row_inputs {
+      display: flex;
+      flex-direction: column;
+      row-gap: 34px;
+      column-gap: 0;
+      margin-bottom: 34px;
+    }
+
+    &Input {
+      border-radius: 15px;
+      padding: 10px 15px;
+      margin-bottom: 34px;
+
+      font-size: 16px;
+    }
+
+    &Label {
+      svg {
+        position: absolute;
+        width: 15px;
+        height: 9px;
+        right: 17px;
+        top: 50%;
+      }
+    }
+
+    &Upload_photo {
+      width: 147px;
+      height: 147px;
+      border-radius: 12px;
+      border: 5px solid $accent-color;
+      margin-bottom: 34px;
+
+      p {
+        font-size: 12px;
+      }
+    }
+
+    &Much_text {
+      margin-bottom: 34px;
+
+      font-size: 16px;
+    }
+
+    &Btn {
+      border-radius: 20px;
+      // width: 100%;
+      padding: 11px 30px;
+
+      font-size: 18px;
+    }
+
+    &Trip_details {
+      flex-direction: row;
+      margin-bottom: 34px;
+      font-size: 18px;
+
+      &__head {
+        display: none;
+      }
+
+      &__body {
+        background-color: inherit;
+        border-radius: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        width: 100%;
+
+        &Item {
+          background-color: $text-bg-color-second;
+          border-radius: 20px;
+          padding: 25px;
+          position: relative;
+
+          display: flex;
+          flex-direction: column;
+          row-gap: 40px;
+          line-height: 2;
+          font-size: 18px;
+
+          span {
+            font-size: 16px;
+            display: block;
+            margin-bottom: 10px;
+            color: $text-color-second;
+          }
+
+          &__delete {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: 25px;
+            top: 25px;
+          }
+
+          &__edit {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: 25px;
+            bottom: 25px;
+          }
+        }
+      }
+    }
+  }
+
+  .create_tour {
+    &Title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 57px;
+    }
+
+    &List {
+      padding: 21px;
+      line-height: 1;
+
+      &__item {
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+
+    &Btn {
+      border-radius: 20px;
+      width: 100%;
+      height: auto;
+      padding: 11px;
+
+      font-size: 18px;
+    }
+  }
 }
