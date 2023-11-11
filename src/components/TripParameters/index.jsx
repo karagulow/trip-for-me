@@ -1,10 +1,13 @@
 import styles from './TripParameters.module.scss';
 
-export const TripParameters = () => {
+export const TripParameters = ({ setTripParamsOpen }) => {
   return (
     <div className={styles.trip_parameters}>
       <div className={styles.trip_parametersBlock}>
-        <div className={styles.trip_parametersBlock__close}>
+        <div
+          className={styles.trip_parametersBlock__close}
+          onClick={() => setTripParamsOpen(false)}
+        >
           <svg
             width="26"
             height="26"

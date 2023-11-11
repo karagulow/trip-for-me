@@ -1,7 +1,14 @@
+import React from 'react';
 import { TripParameters } from '../../components/TripParameters';
 import styles from './GuideCreateTour.module.scss';
 
 export const GuideCreateTour = () => {
+  const [tripParamsOpen, setTripParamsOpen] = React.useState(false);
+
+  tripParamsOpen
+    ? (document.body.style.overflow = 'hidden')
+    : (document.body.style.overflow = 'auto');
+
   return (
     <div className={styles.create_tour}>
       <h1 className={styles.create_tourTitle}>
@@ -261,10 +268,16 @@ export const GuideCreateTour = () => {
             </div>
           </div>
         </div>
-        <button type="button" className={styles.templateBtn}>
+        <button
+          type="button"
+          className={styles.templateBtn}
+          onClick={() => setTripParamsOpen(true)}
+        >
           Добавить поездку
         </button>
-        <TripParameters />
+        {tripParamsOpen && (
+          <TripParameters setTripParamsOpen={setTripParamsOpen} />
+        )}
       </div>
 
       <div className={styles.template}>
