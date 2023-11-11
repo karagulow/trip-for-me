@@ -1,0 +1,148 @@
+@import '../../assets/scss/main.scss';
+
+.trip_parameters {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgb(255, 255, 255, 0.5);
+  z-index: 11;
+
+  &Block {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    background-color: $bg-color-first;
+    border-radius: 40px;
+    padding: 49px 63px;
+    width: 830px;
+    top: 140px;
+
+    &__close {
+      position: absolute;
+      right: 63px;
+      top: 50px;
+
+      width: 26px;
+      height: 26px;
+      cursor: pointer;
+    }
+
+    &__title {
+      font-size: 40px;
+      font-weight: 900;
+      margin-bottom: 47px;
+    }
+
+    &__h3 {
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 26px;
+    }
+
+    &__text {
+      font-size: 20px;
+      font-weight: 500;
+      color: $text-color-second;
+      margin-bottom: 60px;
+    }
+
+    &__btn {
+      background-color: $accent-color;
+      border-radius: 26px;
+      padding: 5px 55px;
+      width: fit-content;
+      margin: 0 auto;
+
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    &__input_col {
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+      margin-bottom: 35px;
+    }
+
+    &__input_row {
+      display: flex;
+      flex-direction: row;
+      column-gap: 44px;
+      margin-bottom: 35px;
+    }
+
+    input {
+      background-color: $text-bg-color-first;
+      border-radius: 25px;
+      padding: 16px 25px;
+      width: 100%;
+
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .trip_parameters {
+    &Block {
+      border-radius: 22px;
+      padding: 55px 15px 15px;
+      width: 90%;
+      top: 50px;
+
+      &__close {
+        right: 15px;
+        top: 20px;
+
+        width: 14px;
+        height: 14px;
+      }
+
+      &__title {
+        font-size: 24px;
+        margin-bottom: 29px;
+      }
+
+      &__h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      &__text {
+        font-size: 12px;
+        margin-bottom: 40px;
+      }
+
+      &__btn {
+        border-radius: 20px;
+        padding: 12px;
+        width: 100%;
+
+        font-size: 16px;
+      }
+
+      &__input_col {
+        margin-bottom: 30px;
+      }
+
+      &__input_row {
+        column-gap: 16px;
+        margin-bottom: 30px;
+      }
+
+      input {
+        border-radius: 40px;
+        padding: 10px 15px;
+
+        font-size: 16px;
+      }
+    }
+  }
+}

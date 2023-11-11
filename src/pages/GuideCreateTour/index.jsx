@@ -1,3 +1,4 @@
+import { TripParameters } from '../../components/TripParameters';
 import styles from './GuideCreateTour.module.scss';
 
 export const GuideCreateTour = () => {
@@ -263,6 +264,7 @@ export const GuideCreateTour = () => {
         <button type="button" className={styles.templateBtn}>
           Добавить поездку
         </button>
+        <TripParameters />
       </div>
 
       <div className={styles.template}>
