@@ -14,7 +14,6 @@ export const WriteReview = ({ avatar, setWriteReviewOpen }) => {
           className={styles.write_reviewBlock__close}
           onClick={() => {
             setWriteReviewOpen(false);
-            document.body.style.overflow = 'auto';
           }}
         >
           <svg

@@ -39,6 +39,10 @@ export const TourPage = () => {
 
   const [writeReviewOpen, setWriteReviewOpen] = React.useState(false);
 
+  writeReviewOpen
+    ? (document.body.style.overflow = 'hidden')
+    : (document.body.style.overflow = 'auto');
+
   const scrollToFooter = () => {
     const footerElement = document.getElementById('footer');
     footerElement.scrollIntoView({ behavior: 'smooth' });
@@ -247,7 +251,6 @@ export const TourPage = () => {
             className={styles.tour_page__feedbacksTop__btn}
             onClick={() => {
               setWriteReviewOpen(true);
-              document.body.style.overflow = 'hidden';
             }}
           >
             Оставить отзыв
