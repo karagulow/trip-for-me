@@ -6,6 +6,7 @@ import logo from '../../assets/img/main/logo.svg';
 import avatar from '../../assets/img/main/avatar.png';
 import { Notification } from '../Notification';
 import { Login } from '../Login';
+import { LoginCheck } from '../LoginCheck';
 
 export const Header = () => {
   const [isAuth, setIsAuth] = React.useState(false); // ВРМЕННО! ПЕРЕНЕСТИ В REDUX!
@@ -33,6 +34,8 @@ export const Header = () => {
   };
 
   const [loginOpen, setLoginOpen] = React.useState(false);
+  const [loginCheckOpen, setLoginCheckOpen] = React.useState(false);
+  const [organizerAuth, setOrganizerAuth] = React.useState(false);
 
   const closeMobileMenu = () => {
     setMenuNavOpen(false);
@@ -452,7 +455,21 @@ export const Header = () => {
                   Вход
                 </button>
               )}
-              {loginOpen ? <Login setLoginOpen={setLoginOpen} /> : <></>}
+              {loginOpen && (
+                <Login
+                  setLoginOpen={setLoginOpen}
+                  setLoginCheckOpen={setLoginCheckOpen}
+                  organizerAuth={organizerAuth}
+                  setOrganizerAuth={setOrganizerAuth}
+                />
+              )}
+              {loginCheckOpen && (
+                <LoginCheck
+                  setLoginCheckOpen={setLoginCheckOpen}
+                  organizerAuth={organizerAuth}
+                  setIsAuth={setIsAuth}
+                />
+              )}
             </ul>
           </div>
         </div>

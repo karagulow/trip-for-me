@@ -84,6 +84,7 @@ export const Home = () => {
             list="cities"
             value={city}
             onChange={handleCityChange}
+            autoComplete="off"
             required
           />
 
@@ -94,6 +95,7 @@ export const Home = () => {
             placeholder="Дата"
             value={date}
             onChange={handleDateChange}
+            autoComplete="off"
             required
           />
 

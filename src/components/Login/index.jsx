@@ -3,9 +3,12 @@ import styles from './Login.module.scss';
 import React from 'react';
 import classNames from 'classnames';
 
-export const Login = ({ setLoginOpen }) => {
-  const [organizerAuth, setOrganizerAuth] = React.useState(false);
-
+export const Login = ({
+  setLoginOpen,
+  setLoginCheckOpen,
+  organizerAuth,
+  setOrganizerAuth,
+}) => {
   return (
     <div className={styles.login}>
       <div className={styles.loginBlock}>
@@ -33,7 +36,14 @@ export const Login = ({ setLoginOpen }) => {
         <form className={styles.loginBlock__form}>
           <input type="text" placeholder="E-mail или телефон" />
           <input type="password" placeholder="Пароль" />
-          <button type="button" className={styles.loginBlock__formBtn}>
+          <button
+            type="button"
+            className={styles.loginBlock__formBtn}
+            onClick={() => {
+              setLoginOpen(false);
+              setLoginCheckOpen(true);
+            }}
+          >
             Продолжить
           </button>
         </form>
