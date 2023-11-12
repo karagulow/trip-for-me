@@ -1,9 +1,17 @@
 import React from 'react';
 import styles from './GuideCreateTourOrder.module.scss';
 import classNames from 'classnames';
+import { GuideCreateTourOrderCheck } from '../../components/GuideCreateTourOrderCheck';
+import { GuideCreateTourOrderSuccess } from '../../components/GuideCreateTourOrderSuccess';
 
 export const GuideCreateTourOrder = () => {
   const [expertHelp, setExpertHelp] = React.useState(false);
+  const [orderCheckOpen, setOrderCheckOpen] = React.useState(false);
+  const [orderSuccessOpen, setOrderSuccessOpen] = React.useState(false);
+
+  orderCheckOpen || orderSuccessOpen
+    ? (document.body.style.overflow = 'hidden')
+    : (document.body.style.overflow = 'auto');
 
   return (
     <div className={styles.order}>
@@ -65,7 +73,7 @@ export const GuideCreateTourOrder = () => {
                 <span>*стоимость консультации 5000 рублей</span>
               </div>
             </div>
-            <button>Оплатить</button>
+            <button onClick={() => setOrderCheckOpen(true)}>Оплатить</button>
           </div>
           <div className={styles.orderBlock__right__mail}>
             <form className={styles.orderBlock__right__mailForm}>
@@ -75,6 +83,18 @@ export const GuideCreateTourOrder = () => {
           </div>
         </div>
       </div>
+      {orderCheckOpen && (
+        <GuideCreateTourOrderCheck
+          setOrderCheckOpen={setOrderCheckOpen}
+          setOrderSuccessOpen={setOrderSuccessOpen}
+        />
+      )}
+
+      {orderSuccessOpen && (
+        <GuideCreateTourOrderSuccess
+          setOrderSuccessOpen={setOrderSuccessOpen}
+        />
+      )}
     </div>
   );
 };

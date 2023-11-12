@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { TripParameters } from '../../components/TripParameters';
 import styles from './GuideCreateTour.module.scss';
 
@@ -311,7 +312,12 @@ export const GuideCreateTour = () => {
       </ul>
 
       <button type="button" className={styles.create_tourBtn}>
-        Оплатить и отправить на проверку
+        <Link
+          to="/lk/guide/create-tour/order"
+          onClick={() => window.scrollTo(0, 0)}
+        >
+          Оплатить и отправить на проверку
+        </Link>
       </button>
     </div>
   );

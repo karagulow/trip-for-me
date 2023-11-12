@@ -1,0 +1,143 @@
+@import '../../assets/scss/main.scss';
+
+.order_check {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgb(255, 255, 255, 0.5);
+  z-index: 11;
+  overflow-y: hidden;
+
+  &Block {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 647px;
+    height: 785px;
+    top: 140px;
+
+    background-color: $bg-color-first;
+    border-radius: 40px;
+    padding: 49px 63px;
+
+    &__close {
+      position: absolute;
+      top: 62px;
+      right: 59px;
+      cursor: pointer;
+    }
+
+    &__logo {
+      margin-bottom: 45px;
+
+      svg {
+        width: 77px;
+        height: 53px;
+      }
+    }
+
+    &__text {
+      margin: 0 auto;
+      margin-bottom: 90px;
+      font-size: 34px;
+      font-weight: 700;
+    }
+
+    &__price {
+      margin: 0 auto;
+      margin-bottom: 90px;
+      font-size: 50px;
+      font-weight: 700;
+      color: $accent-color;
+    }
+
+    &__card {
+      margin: 0 auto;
+      margin-bottom: 85px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 45px;
+
+      &Other {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      &Data {
+        font-size: 40px;
+        font-weight: 700;
+      }
+    }
+
+    &__btn {
+      background-color: $accent-color;
+      border-radius: 26px;
+      width: 407px;
+      height: 61px;
+      margin: 0 auto;
+
+      font-size: 36px;
+      font-weight: 700;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .order_check {
+    &Block {
+      width: 90%;
+      height: auto;
+      top: 80px;
+
+      border-radius: 22px;
+      padding: 16px 30px;
+
+      &__close {
+        top: 27px;
+        right: 32px;
+      }
+
+      &__logo {
+        margin-bottom: 27px;
+
+        svg {
+          width: 52px;
+          height: 36px;
+        }
+      }
+
+      &__text {
+        margin-bottom: 60px;
+        font-size: 22px;
+      }
+
+      &__price {
+        margin-bottom: 60px;
+        font-size: 33px;
+      }
+
+      &__card {
+        margin-bottom: 50px;
+        row-gap: 30px;
+
+        &Data {
+          font-size: 26px;
+        }
+      }
+
+      &__btn {
+        border-radius: 20px;
+        width: 100%;
+        height: 44px;
+
+        font-size: 20px;
+      }
+    }
+  }
+}

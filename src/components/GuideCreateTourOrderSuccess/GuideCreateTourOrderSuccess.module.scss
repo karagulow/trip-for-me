@@ -1,0 +1,92 @@
+@import '../../assets/scss/main.scss';
+
+.order_check {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgb(255, 255, 255, 0.5);
+  z-index: 11;
+  overflow-y: hidden;
+
+  &Block {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 647px;
+    height: 785px;
+    top: 140px;
+    align-items: center;
+
+    background-color: $bg-color-first;
+    border-radius: 40px;
+    padding: 68px 63px 57px;
+
+    &__logo {
+      margin-bottom: 123px;
+
+      svg {
+        width: 164px;
+        height: 114px;
+      }
+    }
+
+    &__text {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+    }
+
+    &__btn {
+      position: absolute;
+      bottom: 57px;
+      background-color: $accent-color;
+      border-radius: 26px;
+      width: 407px;
+      height: 61px;
+
+      font-size: 36px;
+      font-weight: 700;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .order_check {
+    &Block {
+      width: 90%;
+      height: auto;
+      top: 80px;
+
+      border-radius: 22px;
+      padding: 38px 30px 30px;
+
+      &__logo {
+        margin-bottom: 93px;
+
+        svg {
+          width: 100px;
+          height: 70px;
+        }
+      }
+
+      &__text {
+        margin-bottom: 118px;
+        font-size: 20px;
+      }
+
+      &__btn {
+        position: initial;
+        border-radius: 20px;
+        width: 100%;
+        height: 44px;
+
+        font-size: 20px;
+      }
+    }
+  }
+}
