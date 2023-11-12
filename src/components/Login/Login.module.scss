@@ -1,5 +1,9 @@
 @import '../../assets/scss/main.scss';
 
+.organizer {
+  background-color: $accent-color;
+}
+
 .login {
   position: fixed;
   display: flex;

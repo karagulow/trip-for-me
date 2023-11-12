@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
 import styles from './Login.module.scss';
+import React from 'react';
+import classNames from 'classnames';
 
 export const Login = ({ setLoginOpen }) => {
+  const [organizerAuth, setOrganizerAuth] = React.useState(false);
+
   return (
     <div className={styles.login}>
       <div className={styles.loginBlock}>
@@ -33,8 +37,16 @@ export const Login = ({ setLoginOpen }) => {
             Продолжить
           </button>
         </form>
-        <div className={styles.loginBlock__role}>
-          <div className={styles.loginBlock__roleCircle}></div>
+        <div
+          className={styles.loginBlock__role}
+          onClick={() => setOrganizerAuth(!organizerAuth)}
+        >
+          <div
+            className={classNames(
+              styles.loginBlock__roleCircle,
+              organizerAuth && styles.organizer
+            )}
+          ></div>
           <p className={styles.loginBlock__roleText}>Я организатор</p>
         </div>
         <Link className={styles.loginBlock__forgot_password}>
