@@ -166,7 +166,7 @@ export const Header = () => {
                         <li>
                           <div className={styles.circle}></div>
                           <Link
-                            to="/"
+                            to="/lk/guide/chat"
                             onClick={() => {
                               closeMobileMenu();
                               window.scrollTo(0, 0);
@@ -313,7 +313,7 @@ export const Header = () => {
                   <ul>
                     <li>
                       <Link
-                        to="/"
+                        to="/lk/guide/chat"
                         onClick={() => {
                           window.scrollTo(0, 0);
                           setMenuGuideOpen(false);
