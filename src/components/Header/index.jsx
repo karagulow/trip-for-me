@@ -118,13 +118,13 @@ export const Header = () => {
                   <ul className={styles.navMobList}>
                     <li className={styles.navMobList__itemUn}>
                       <Link
-                        to=""
+                        to="lk/guide/create-tour"
                         onClick={() => {
                           closeMobileMenu();
                           window.scrollTo(0, 0);
                         }}
                       >
-                        Как это работает?
+                        Создать тур
                       </Link>
                     </li>
                     <li className={styles.navMobList__item}>
@@ -173,18 +173,6 @@ export const Header = () => {
                             }}
                           >
                             Чат с клиентами
-                          </Link>
-                        </li>
-                        <li>
-                          <div className={styles.circle}></div>
-                          <Link
-                            to="/"
-                            onClick={() => {
-                              closeMobileMenu();
-                              window.scrollTo(0, 0);
-                            }}
-                          >
-                            Эксперты
                           </Link>
                         </li>
                       </ul>
@@ -270,12 +258,20 @@ export const Header = () => {
             </div>
             <ul className={styles.navList}>
               <li className={styles.navList__itemUn}>
-                <div onClick={() => window.scrollTo(0, 0)}>
-                  Как это работает?
-                </div>
+                <Link
+                  to="lk/guide/create-tour"
+                  className={styles.navList__itemUnLink}
+                  onClick={() => window.scrollTo(0, 0)}
+                >
+                  Создать тур
+                </Link>
               </li>
               <li className={styles.navList__item} ref={menuClientRef}>
-                <div to="/" onClick={() => setMenuClientOpen(!menuClientOpen)}>
+                <div
+                  className={styles.navList__itemLink}
+                  to="/"
+                  onClick={() => setMenuClientOpen(!menuClientOpen)}
+                >
                   Путешествия
                 </div>
                 {menuClientOpen && (
@@ -306,7 +302,11 @@ export const Header = () => {
                 )}
               </li>
               <li className={styles.navList__item} ref={menuGuideRef}>
-                <div to="/" onClick={() => setMenuGuideOpen(!menuGuideOpen)}>
+                <div
+                  className={styles.navList__itemLink}
+                  to="/"
+                  onClick={() => setMenuGuideOpen(!menuGuideOpen)}
+                >
                   Организаторам туров
                 </div>
                 {menuGuideOpen && (
@@ -322,7 +322,7 @@ export const Header = () => {
                         Чат с клиентами
                       </Link>
                     </li>
-                    <li>
+                    {/* <li>
                       <Link
                         to="/"
                         onClick={() => {
@@ -332,12 +332,13 @@ export const Header = () => {
                       >
                         Эксперты
                       </Link>
-                    </li>
+                    </li> */}
                   </ul>
                 )}
               </li>
               <li className={styles.navList__item} ref={menuContactsRef}>
                 <div
+                  className={styles.navList__itemLink}
                   to="/"
                   onClick={() => setMenuContactsOpen(!menuContactsOpen)}
                 >

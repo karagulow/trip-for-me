@@ -44,7 +44,6 @@ header {
 
       &__item {
         position: relative;
-        padding: 9px 30px;
 
         font-weight: 700;
         font-size: 18px;
@@ -54,6 +53,10 @@ header {
 
         color: $text-color-first;
         cursor: pointer;
+
+        &Link {
+          padding: 9px 30px;
+        }
 
         ul {
           display: flex;
@@ -75,16 +78,20 @@ header {
         }
 
         &Un {
-          padding: 9px 30px;
-
           font-weight: 700;
           font-size: 18px;
 
           background-color: $text-color-first;
           border-radius: 17px;
 
-          color: $accent-color;
           cursor: pointer;
+
+          &Link {
+            display: flex;
+            margin: 0 auto;
+            color: $accent-color;
+            padding: 9px 30px;
+          }
         }
       }
     }

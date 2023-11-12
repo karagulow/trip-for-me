@@ -17,6 +17,7 @@ import { GuideChat } from './pages/GuideChat';
 import { GuideReviews } from './pages/GuideReviews';
 import { GuideAnalytics } from './pages/GuideAnalytics';
 import { GuideCreateTour } from './pages/GuideCreateTour';
+import { GuideCreateTourOrder } from './pages/GuideCreateTourOrder';
 
 function App() {
   return (
@@ -40,6 +41,10 @@ function App() {
         <Route path="lk/guide/support" element={<GuideChat />} />
         <Route path="lk/guide/analytics" element={<GuideAnalytics />} />
         <Route path="lk/guide/create-tour" element={<GuideCreateTour />} />
+        <Route
+          path="lk/guide/create-tour/order"
+          element={<GuideCreateTourOrder />}
+        />
       </Route>
     </Routes>
   );

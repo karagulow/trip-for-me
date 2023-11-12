@@ -1,0 +1,361 @@
+@import '../../assets/scss/main.scss';
+
+.circleActive {
+  background-color: $accent-color;
+}
+
+.order {
+  display: flex;
+  flex-direction: column;
+  row-gap: 90px;
+  color: $text-color-first;
+
+  &Title {
+    font-size: 56px;
+    font-weight: 900;
+  }
+
+  &Block {
+    display: flex;
+    flex-direction: row;
+    column-gap: 40px;
+    justify-content: space-between;
+
+    &__left {
+      display: flex;
+      flex-direction: column;
+      row-gap: 40px;
+      width: 60%;
+
+      &__about {
+        background-color: $text-bg-color-first;
+        border-radius: 40px;
+        padding: 33px 41px;
+        height: 353px;
+
+        &Title {
+          font-size: 28px;
+          font-weight: 700;
+          margin-bottom: 17px;
+        }
+
+        &Date {
+          display: flex;
+          flex-direction: row;
+          column-gap: 41px;
+          margin-bottom: 36px;
+
+          p {
+            font-size: 20px;
+            font-weight: 700;
+            color: $text-color-second;
+          }
+        }
+
+        &Name {
+          font-size: 28px;
+          font-weight: 700;
+          margin-bottom: 36px;
+        }
+
+        &Params {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 30px;
+          align-items: end;
+
+          &__type {
+            font-size: 24px;
+            font-weight: 500;
+          }
+
+          &__count {
+            font-size: 29px;
+            font-weight: 700;
+          }
+        }
+      }
+
+      &__pay_method {
+        padding: 36px 41px;
+        height: 237px;
+        background-color: $text-bg-color-first;
+        border-radius: 40px;
+
+        &Title {
+          font-size: 36px;
+          font-weight: 700;
+          margin-bottom: 49px;
+        }
+
+        &Item {
+          display: flex;
+          flex-direction: row;
+          column-gap: 28px;
+          cursor: pointer;
+          align-items: center;
+
+          &__circle {
+            border: 3px solid $accent-color;
+            border-radius: 50%;
+            width: 34px;
+            height: 34px;
+          }
+
+          p {
+            font-size: 28px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+      row-gap: 40px;
+      width: 40%;
+
+      &__payment {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 33px 41px;
+        height: 353px;
+
+        background-color: $text-bg-color-first;
+        border-radius: 40px;
+
+        &Price {
+          display: flex;
+          flex-direction: column;
+          row-gap: 20px;
+          font-size: 32px;
+          font-weight: 700;
+
+          span {
+            font-size: 36px;
+            font-weight: 700;
+            color: $accent-color;
+          }
+        }
+
+        &Expert_help {
+          display: flex;
+          flex-direction: row;
+          column-gap: 20px;
+          cursor: pointer;
+
+          &__circle {
+            min-width: 29px;
+            height: 29px;
+            border: 2px solid $accent-color;
+            border-radius: 50%;
+          }
+
+          &__text {
+            font-size: 24px;
+            font-weight: 500;
+
+            span {
+              font-size: 18px;
+              font-weight: 500;
+              color: $text-color-second;
+            }
+          }
+        }
+
+        button {
+          background-color: $accent-color;
+          border-radius: 20px;
+          width: 261px;
+          height: 49px;
+          margin: 0 auto;
+
+          font-size: 28px;
+          font-weight: 700;
+        }
+      }
+
+      &__mail {
+        background-color: $text-bg-color-first;
+        border-radius: 40px;
+        padding: 41px;
+        height: 237px;
+
+        &Form {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
+
+          input {
+            padding: 13px 23px;
+            border: 2px solid $accent-color;
+            border-radius: 20px;
+
+            font-size: 27px;
+            font-weight: 500;
+          }
+
+          button {
+            background-color: $accent-color;
+            border-radius: 20px;
+
+            width: 100%;
+            height: 49px;
+            font-size: 24px;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .order {
+    row-gap: 52px;
+
+    &Title {
+      font-size: 24px;
+    }
+
+    &Block {
+      flex-direction: column;
+      column-gap: 0;
+      row-gap: 52px;
+      justify-content: start;
+
+      &__left {
+        row-gap: 52px;
+        width: 100%;
+
+        &__about {
+          border-radius: 20px;
+          padding: 22px 20px;
+          height: auto;
+
+          &Title {
+            font-size: 20px;
+            margin-bottom: 30px;
+          }
+
+          &Date {
+            column-gap: 63px;
+            margin-bottom: 40px;
+
+            p {
+              font-size: 16px;
+            }
+          }
+
+          &Name {
+            font-size: 20px;
+            margin-bottom: 40px;
+          }
+
+          &Params {
+            margin-bottom: 25px;
+
+            &__type {
+              font-size: 16px;
+            }
+
+            &__count {
+              font-size: 20px;
+            }
+          }
+        }
+
+        &__pay_method {
+          padding: 22px 20px;
+          height: auto;
+          border-radius: 20px;
+
+          &Title {
+            font-size: 24px;
+            margin-bottom: 40px;
+          }
+
+          &Item {
+            column-gap: 10px;
+
+            p {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+
+      &__right {
+        flex-direction: column-reverse;
+        row-gap: 52px;
+        width: 100%;
+
+        &__payment {
+          padding: 22px 20px;
+          height: auto;
+
+          border-radius: 20px;
+
+          &Price {
+            margin-bottom: 30px;
+            font-size: 24px;
+
+            span {
+              font-size: 28px;
+            }
+          }
+
+          &Expert_help {
+            column-gap: 15px;
+            margin-bottom: 30px;
+
+            &__circle {
+              min-width: 23px;
+              height: 23px;
+            }
+
+            &__text {
+              font-size: 16px;
+
+              span {
+                font-size: 14px;
+              }
+            }
+          }
+
+          button {
+            border-radius: 20px;
+            width: 100%;
+            height: 44px;
+
+            font-size: 20px;
+          }
+        }
+
+        &__mail {
+          border-radius: 20px;
+          padding: 32px 21px;
+          height: auto;
+
+          &Form {
+            row-gap: 30px;
+
+            input {
+              padding: 13px 28px;
+              font-size: 16px;
+            }
+
+            button {
+              height: 44px;
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
